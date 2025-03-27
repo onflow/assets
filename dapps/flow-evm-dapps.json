@@ -9,5 +9,85 @@
 		],
 		"description": "PunchSwap is a decentralized cryptocurrency exchange by KittyPunch.",
 		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/punchswap/png/logo.png"
+	},
+	{
+		"name": "PumpFlow",
+		"website": "https://www.pumpflow.meme/",
+		"chain_id": 747,
+		"contract_addresses": [],
+		"description": "Launch Meme Tokens in seconds on Flow Blockchain.",
+		"logoURI": ""
+	},
+	{
+		"name": "MORE Markets",
+		"website": "https://app.more.markets/",
+		"chain_id": 747,
+		"contract_addresses": [],
+		"description": "Connecting the world to proven strategies in trading, yield farming, and everything in between through automated vaults.",
+		"logoURI": ""
+	},
+	{
+		"name": "ankr",
+		"website": "https://www.ankr.com/staking/stake/flow",
+		"chain_id": 747,
+		"contract_addresses": [],
+		"description": "",
+		"logoURI": ""
+	},
+	{
+		"name": "StableKitty",
+		"website": "https://stable.kittypunch.xyz/",
+		"chain_id": 747,
+		"contract_addresses": [],
+		"description": "",
+		"logoURI": ""
+	},
+	{
+		"name": "KittyPunch",
+		"website": "https://app.kittypunch.xyz/",
+		"chain_id": 747,
+		"contract_addresses": [],
+		"description": "",
+		"logoURI": ""
+	},
+	{
+		"name": "aiSports",
+		"website": "https://www.aisportspro.com/",
+		"chain_id": 747,
+		"contract_addresses": [],
+		"description": "The Premier Fantasy Sports Platform on the Flow Blockchain.",
+		"logoURI": ""
+	},
+	{
+		"name": "Beezie",
+		"website": "https://beezie.io/claw",
+		"chain_id": 747,
+		"contract_addresses": [],
+		"description": "",
+		"logoURI": ""
+	},
+	{
+		"name": "NBA Top Shot",
+		"website": "https://nbatopshot.com/",
+		"chain_id": 747,
+		"contract_addresses": [],
+		"description": "",
+		"logoURI": ""
+	},
+	{
+		"name": "Mintify",
+		"website": "https://flow.mintify.xyz/",
+		"chain_id": 747,
+		"contract_addresses": [],
+		"description": "",
+		"logoURI": ""
+	},
+	{
+		"name": "OpenSea",
+		"website": "https://opensea.io/discover/chain/flow",
+		"chain_id": 747,
+		"contract_addresses": [],
+		"description": "",
+		"logoURI": ""
 	}
 ]
