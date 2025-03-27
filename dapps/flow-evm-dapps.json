@@ -1,0 +1,13 @@
+[
+	{
+		"name": "PunchSwap",
+		"website": "https://swap.kittypunch.xyz/",
+		"chain_id": 747,
+		"contract_addresses": [
+			"0xf45AFe28fd5519d5f8C1d4787a4D5f724C0eFa4d",
+			"0x29372c22459a4e373851798bFd6808e71EA34A71"
+		],
+		"description": "PunchSwap is a decentralized cryptocurrency exchange by KittyPunch.",
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/punchswap/png/logo.png"
+	}
+]
