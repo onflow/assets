@@ -16,12 +16,10 @@ This directory contains logo assets for Flow blockchain environments and related
 
 ## Naming Convention
 
-Use descriptive names for environment logos:
+Use simple, non-descriptive filenames for logos and ensure the logo is in the right folder:
 
--   `flow-logo.svg`
--   `flow-icon.png`
--   `cadence-logo.svg`
--   `flow-evm-icon.png`
+-   `logo.svg`
+-   `logo.png`
 
 ## Adding New Environment Assets
 
@@ -34,4 +32,3 @@ Use descriptive names for environment logos:
 ## Special Requirements
 
 -   For official Flow environment assets, please ensure the logos match the official branding guidelines
--   For variants (testnet, mainnet, etc.), use suffixes like `-testnet` or `-mainnet`
