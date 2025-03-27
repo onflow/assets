@@ -1,0 +1,9 @@
+Name: Example dApp
+Description: A decentralized application built on Flow blockchain that enables users to create, trade, and collect unique digital assets.
+Website: https://example-dapp.com
+Social:
+  - Twitter: https://twitter.com/example-dapp
+  - Discord: https://discord.gg/example-dapp
+Contact: team@example-dapp.com
+
+// Note: This is an example file. Replace with actual information for your dApp. 
