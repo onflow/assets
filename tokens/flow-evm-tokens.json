@@ -1,0 +1,36 @@
+{
+	"name": "Flow EVM Token List",
+	"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/environments/flow/svg/logo.svg",
+	"keywords": ["flow", "evm", "token", "whitelist"],
+	"timestamp": "2025-03-28T00:00:00Z",
+	"version": {
+		"major": 1,
+		"minor": 0,
+		"patch": 0
+	},
+	"tokens": [
+		{
+			"chainId": 747,
+			"address": "0x9db94c9564243ba7",
+			"contractName": "aiSportsJuice",
+			"path": {
+				"vault": "/storage/aiSportsJuiceVault",
+				"receiver": "/public/aiSportsJuiceReceiver",
+				"balance": "/public/aiSportsJuiceMetadata"
+			},
+			"evmAddress": "0x3a33c904c132822ce01948ce318c15988727d1db",
+			"flowAddress": "0x9db94c9564243ba7",
+			"symbol": "JUICE",
+			"name": "JUICE by aiSports",
+			"description": "This is the aiSports DAO, here we manage the $JUICE token and aiSports treasury. We will also utilize this platform to support community votes.",
+			"decimals": 8,
+			"logoURI": "https://nftstorage.link/ipfs/bafkreidrywo4xhmfqtzjbqxplwjfwhuvifsfquc7q7zoysg6bdrxjbxa5e",
+			"tags": [],
+			"extensions": {
+				"discord": "VKvUxMwu5r",
+				"twitter": "aisportspro",
+				"website": "www.aisportspro.com"
+			}
+		}
+	]
+}
