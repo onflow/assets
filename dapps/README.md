@@ -4,6 +4,13 @@ This directory contains logo assets for decentralized applications (dApps) built
 
 ## Directory Structure
 
+Each dApp should have its own folder, with logo files placed in format-specific subfolders:
+
+```bash
+dappname/png/logo.png
+dappname/svg/logo.svg
+```
+
 -   `svg/` - SVG format dApp logos
 -   `png/` - PNG format dApp logos (256x256px recommended)
 
