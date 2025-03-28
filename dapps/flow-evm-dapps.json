@@ -8,7 +8,8 @@
 			"0x29372c22459a4e373851798bFd6808e71EA34A71"
 		],
 		"description": "PunchSwap is a decentralized cryptocurrency exchange by KittyPunch.",
-		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/punchswap/png/logo.png"
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/punchswap/png/logo.png",
+		"category": "DeFi"
 	},
 	{
 		"name": "PumpFlow",
