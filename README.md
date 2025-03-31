@@ -22,7 +22,7 @@ assets/
 │       └── png/logo.png
 └── tokens/
     ├── logos/              # Token Logos, to be used and registered in the Flow TokenList
-    │   └── <contract-address>/ # 0x-prefixed contract address
+    │   └── <contract-address>/ # For testnet token use `testnet:<contract-address>`
     │       ├── logo.svg
     │       └── logo.png
     ├── token-list-jsons/   # Submodule of Flow TokenList JSONs
