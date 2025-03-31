@@ -4,7 +4,7 @@ This repository contains logo assets for the Flow blockchain ecosystem, includin
 
 ## Repository Structure
 
-```
+```text
 assets/
 ├── environments/   # Flow environment logos
 │   ├── flow/
@@ -16,11 +16,11 @@ assets/
 │   └── evm/
 │       ├── svg/logo.svg
 │       └── png/logo.png
-├── dapps/          # Decentralized application logos
+├── dapps/         # Decentralized application logos
 │   └── <dapp-name>/
 │       ├── svg/logo.svg
 │       └── png/logo.png
-└── tokens/         # Token logos
+└── tokens/        # Token logos
     ├── <token-address>/
     │   ├── svg/logo.svg
     │   └── png/logo.png
@@ -29,23 +29,23 @@ assets/
 
 ## File Naming Conventions
 
--   Use logo.svg and logo.png for all assets.
--   Do not use kebab-case or descriptive filenames — the folder name indicates the project.
--   Each project (token, environment, or dApp) gets its own folder.
+- Use logo.svg and logo.png for all assets.
+- Do not use kebab-case or descriptive filenames — the folder name indicates the project.
+- Each project (token, environment, or dApp) gets its own folder.
 
 ## Image Requirements
 
 ### SVG Files
 
--   Keep SVG files clean and optimized
--   Remove any unnecessary metadata
--   Ensure the SVG is properly viewboxed
+- Keep SVG files clean and optimized
+- Remove any unnecessary metadata
+- Ensure the SVG is properly viewboxed
 
 ### PNG Files
 
--   Resolution: 256x256 pixels recommended (minimum 128x128)
--   Format: 32-bit PNG (with transparency)
--   Background: Transparent
+- Resolution: 256x256 pixels recommended (minimum 128x128)
+- Format: 32-bit PNG (with transparency)
+- Background: Transparent
 
 ## Adding New Assets
 
