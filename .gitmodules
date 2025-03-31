@@ -1,0 +1,3 @@
+[submodule "tokens/token-list-jsons"]
+	path = tokens/token-list-jsons
+	url = https://github.com/fixes-world/token-list-jsons.git

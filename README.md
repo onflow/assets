@@ -6,10 +6,6 @@ This repository contains logo assets for the Flow blockchain ecosystem, includin
 
 ```
 assets/
-├── tokens/         # Token logos
-│   └── <token-name>/
-│       ├── svg/logo.svg
-│       └── png/logo.png
 ├── environments/   # Flow environment logos
 │   ├── flow/
 │   │   ├── svg/logo.svg
@@ -20,10 +16,15 @@ assets/
 │   └── evm/
 │       ├── svg/logo.svg
 │       └── png/logo.png
-└── dapps/          # Decentralized application logos
-    └── <dapp-name>/
-        ├── svg/logo.svg
-        └── png/logo.png
+├── dapps/          # Decentralized application logos
+│   └── <dapp-name>/
+│       ├── svg/logo.svg
+│       └── png/logo.png
+└── tokens/         # Token logos
+    ├── <token-address>/
+    │   ├── svg/logo.svg
+    │   └── png/logo.png
+    └── verified.json
 ```
 
 ## File Naming Conventions
