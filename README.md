@@ -29,6 +29,10 @@ assets/
     └── verified.json
 ```
 
+## How to add a new token?
+
+Refer to [Token Assets Guide](tokens/README.md) for detailed instructions on adding a new token.
+
 ## File Naming Conventions
 
 - Use logo.svg and logo.png for all assets.
