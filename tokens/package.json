@@ -1,0 +1,13 @@
+{
+  "name": "@onflow/verified-tokens",
+  "private": true,
+  "type": "module",
+  "module": "src/index.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
