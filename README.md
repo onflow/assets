@@ -20,10 +20,12 @@ assets/
 │   └── <dapp-name>/
 │       ├── svg/logo.svg
 │       └── png/logo.png
-└── tokens/        # Token logos
-    ├── <token-address>/
-    │   ├── svg/logo.svg
-    │   └── png/logo.png
+└── tokens/
+    ├── logos/              # Token Logos, to be used and registered in the Flow TokenList
+    │   └── <contract-address>/ # 0x-prefixed contract address
+    │       ├── logo.svg
+    │       └── logo.png
+    ├── token-list-jsons/   # Submodule of Flow TokenList JSONs
     └── verified.json
 ```
 
