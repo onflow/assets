@@ -3,9 +3,14 @@
   "private": true,
   "type": "module",
   "module": "src/index.ts",
-  "dependencies": {},
+  "dependencies": {
+    "@onflow/fcl": "^1.15.0",
+    "elliptic": "^6.6.1",
+    "sha3": "^2.1.4"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/elliptic": "^6.4.18"
   },
   "peerDependencies": {
     "typescript": "^5"
