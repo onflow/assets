@@ -26,3 +26,5 @@ export interface IFlowSigner {
 	 */
 	buildAuthorization(accountIndex?: number, privateKey?: string): Authz;
 }
+
+export interface Context extends Record<string, unknown> {}

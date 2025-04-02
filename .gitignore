@@ -136,3 +136,4 @@ dist
 .vercel
 
 .DS_Store
+*.pkey
