@@ -24,10 +24,6 @@ async function checkDirectory(
     const hasPng = files.includes("logo.png");
     const hasSvg = files.includes("logo.svg");
 
-    if (!hasPng && !hasSvg) {
-        return null;
-    }
-
     // Extract EVM address (remove testnet: prefix if exists) but keep original case
     const evmAddress = dirName.startsWith("testnet:") ? dirName.slice(8) : dirName;
 

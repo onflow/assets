@@ -102,9 +102,14 @@ async function main() {
             // Check logo URI
             const targetUri = contract.logos.svg
                 ? getLogoUrl(contract.address, "svg")
-                : getLogoUrl(contract.address, "png");
+                : contract.logos.png
+                  ? getLogoUrl(contract.address, "png")
+                  : undefined;
 
-            if (contract.onchainLogoUri?.toLowerCase() !== targetUri.toLowerCase()) {
+            if (
+                targetUri !== undefined &&
+                contract.onchainLogoUri?.toLowerCase() !== targetUri.toLowerCase()
+            ) {
                 if (!contract.cadence) {
                     console.error(`[Contract] No cadence info found for ${contract.address}`);
                     continue;
