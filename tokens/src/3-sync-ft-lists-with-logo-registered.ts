@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import path from "node:path";
 import fetch from "node-fetch";
 import {
     type Network,
@@ -9,9 +10,20 @@ import {
 } from "./utils/config";
 import type { TokenList, TokenStatus } from "./utils/types";
 
+const ensureDirectoryExists = (filePath: string) => {
+    const dir = path.dirname(filePath);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+};
+
 const loadShortlistedContracts = (network: Network): TokenStatus[] => {
     try {
         const filePath = getShortlistedContractsPath(network);
+        if (!fs.existsSync(filePath)) {
+            console.log(`No shortlisted contracts found for ${network}`);
+            return [];
+        }
         return JSON.parse(fs.readFileSync(filePath, "utf8"));
     } catch (e) {
         console.error(`Failed to read shortlisted contracts for ${network}`, e);
@@ -35,23 +47,26 @@ const queryTokenList = async (network: Network): Promise<TokenList | undefined> 
 };
 
 const writeJSONFile = async (data: TokenList, network: Network): Promise<void> => {
+    if (data.tokens.length === 0) {
+        console.log(`No tokens found for ${network} after filtering.`);
+        return;
+    }
+
     const filename = getTokenListPath(network);
+    ensureDirectoryExists(filename);
 
     let originList: TokenList | undefined;
     try {
-        originList = JSON.parse(fs.readFileSync(filename, "utf8")) as TokenList;
+        if (fs.existsSync(filename)) {
+            originList = JSON.parse(fs.readFileSync(filename, "utf8")) as TokenList;
+        }
     } catch (e) {
         console.log(`Failed to read ${filename}`, e);
     }
 
-    // check diff
     if (originList && JSON.stringify(data.tokens) === JSON.stringify(originList.tokens)) {
+        // check diff
         console.log(`No change for ${filename}`);
-        return;
-    }
-
-    if (data.tokens.length === 0) {
-        console.log("Failed to query token list");
         return;
     }
 
