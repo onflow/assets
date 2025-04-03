@@ -1,17 +1,10 @@
 import { existsSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
 import { buildBlockchainContext } from "./utils";
 import { registerEVMAsset, updateCustomizedDisplay } from "./utils/actions";
+import { type Network, getLogoUrl, getShortlistedContractsPath, networks } from "./utils/config";
 import { FlowConnector } from "./utils/flow";
 import type { TokenStatus } from "./utils/types";
 import type { FlowBlockchainContext } from "./utils/types";
-
-// Get the directory name of the current file
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const GITHUB_RAW_BASE = "https://raw.githubusercontent.com/onflow/assets/main";
 
 async function checkUrlAvailability(url: string): Promise<boolean> {
     try {
@@ -69,25 +62,21 @@ async function updateTokenLogo(
 }
 
 async function main() {
-    const NETWORK = process.env.NETWORK;
-    if (!NETWORK || !["mainnet", "testnet"].includes(NETWORK)) {
-        console.error('Please set NETWORK environment variable to either "mainnet" or "testnet"');
+    const network = process.env.NETWORK as Network;
+    if (!network || !networks.includes(network)) {
+        console.error(
+            `Please set NETWORK environment variable to either "${networks.join('" or "')}"`,
+        );
         process.exit(1);
     }
 
-    console.log(`\n[Script] Starting process on ${NETWORK}`);
+    console.log(`\n[Script] Starting process on ${network}`);
 
     const ctx = await buildBlockchainContext();
-    const shortlistedPath = join(
-        __dirname,
-        "..",
-        "outputs",
-        NETWORK as "mainnet" | "testnet",
-        "shortlisted-contracts.json",
-    );
+    const shortlistedPath = getShortlistedContractsPath(network);
 
     if (!existsSync(shortlistedPath)) {
-        console.error(`[Script] Shortlisted contracts file not found for network: ${NETWORK}`);
+        console.error(`[Script] Shortlisted contracts file not found for network: ${network}`);
         process.exit(1);
     }
 
@@ -111,12 +100,9 @@ async function main() {
             }
 
             // Check logo URI
-            const logoBasePath = `tokens/logos/${contract.address}`;
-            const expectedSvgUri = `${GITHUB_RAW_BASE}/${logoBasePath}/logo.svg`;
-            const expectedPngUri = `${GITHUB_RAW_BASE}/${logoBasePath}/logo.png`;
-
-            // Prioritize SVG, fallback to PNG if not available
-            const targetUri = contract.logos.svg ? expectedSvgUri : expectedPngUri;
+            const targetUri = contract.logos.svg
+                ? getLogoUrl(contract.address, "svg")
+                : getLogoUrl(contract.address, "png");
 
             if (contract.onchainLogoUri?.toLowerCase() !== targetUri.toLowerCase()) {
                 if (!contract.cadence) {

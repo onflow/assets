@@ -1,16 +1,12 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 import { buildBlockchainContext } from "./utils";
 import { getEVMAssets } from "./utils/actions";
+import { LOGOS_DIR, type Network, getShortlistedContractsPath, networks } from "./utils/config";
 import type { FlowBlockchainContext, TokenStatus } from "./utils/types";
 
 const EVM_ADDRESS_REGEX = /^(?:testnet:)?0x[a-fA-F0-9]{40}$/;
-
-// Get the directory name of the current file
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 async function checkDirectory(
     ctx: FlowBlockchainContext,
@@ -67,23 +63,24 @@ async function checkDirectory(
 }
 
 async function main() {
-    const network = process.env.NETWORK;
-    if (!network || !["mainnet", "testnet"].includes(network)) {
-        console.error('Please set NETWORK environment variable to either "mainnet" or "testnet"');
+    const network = process.env.NETWORK as Network;
+    if (!network || !networks.includes(network)) {
+        console.error(
+            `Please set NETWORK environment variable to either "${networks.join('" or "')}"`,
+        );
         process.exit(1);
     }
 
-    const logosDir = path.join(__dirname, "../logos");
-    const outputFile = path.join(__dirname, `../outputs/${network}/shortlisted-contracts.json`);
+    const outputFile = getShortlistedContractsPath(network);
 
     const tokens: TokenStatus[] = [];
     const ctx = await buildBlockchainContext();
 
     try {
-        const dirs = await fs.readdir(logosDir);
+        const dirs = await fs.readdir(LOGOS_DIR);
 
         for (const dir of dirs) {
-            const dirPath = path.join(logosDir, dir);
+            const dirPath = path.join(LOGOS_DIR, dir);
             const stat = await fs.stat(dirPath);
 
             if (stat.isDirectory()) {

@@ -75,3 +75,18 @@ export interface TokenStatus {
     };
     onchainLogoUri?: string;
 }
+
+export interface Token {
+    address: string;
+    contractName: string;
+    [key: string]: unknown;
+}
+
+export interface TokenList {
+    tokens: Token[];
+    version: {
+        major: number;
+        minor: number;
+        patch: number;
+    };
+}
