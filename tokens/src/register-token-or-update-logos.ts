@@ -91,19 +91,18 @@ async function main() {
 
         try {
             if (!contract.registered || !contract.bridged) {
-                await registerToken(ctx, contract.address);
+                await registerToken(ctx, contract.address.toLowerCase());
             }
 
             // Check logo URI
-            const evmAddressLower = contract.address.toLowerCase();
-            const logoBasePath = `tokens/logos/${evmAddressLower}`;
+            const logoBasePath = `tokens/logos/${contract.address}`;
             const expectedSvgUri = `${GITHUB_RAW_BASE}/${logoBasePath}/logo.svg`;
             const expectedPngUri = `${GITHUB_RAW_BASE}/${logoBasePath}/logo.png`;
 
             // Prioritize SVG, fallback to PNG if not available
             const targetUri = contract.logos.svg ? expectedSvgUri : expectedPngUri;
 
-            if (contract.onchainLogoUri?.toLowerCase() !== targetUri) {
+            if (contract.onchainLogoUri?.toLowerCase() !== targetUri.toLowerCase()) {
                 if (!contract.cadence) {
                     console.error(`[Contract] No cadence info found for ${contract.address}`);
                     continue;

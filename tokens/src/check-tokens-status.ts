@@ -32,15 +32,15 @@ async function checkDirectory(
         return null;
     }
 
-    // Extract EVM address (remove testnet: prefix if exists)
+    // Extract EVM address (remove testnet: prefix if exists) but keep original case
     const evmAddress = dirName.startsWith("testnet:") ? dirName.slice(8) : dirName;
 
-    // Query chain status
-    const evmAssetStatus = await getEVMAssets(ctx.wallet, evmAddress);
+    // Query chain status with lowercase address
+    const evmAssetStatus = await getEVMAssets(ctx.wallet, evmAddress.toLowerCase());
 
     if (!evmAssetStatus) {
         return {
-            address: evmAddress,
+            address: evmAddress, // Store original case for file path
             logos: {
                 png: hasPng,
                 svg: hasSvg,
@@ -49,7 +49,7 @@ async function checkDirectory(
     }
 
     return {
-        address: evmAddress,
+        address: evmAddress, // Store original case for file path
         registered: evmAssetStatus.isRegistered,
         bridged: evmAssetStatus.isBridged,
         logos: {
