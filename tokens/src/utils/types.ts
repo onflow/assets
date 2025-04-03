@@ -31,16 +31,34 @@ export interface IFlowSigner {
 export interface Context extends Record<string, unknown> {}
 
 export interface FlowBlockchainContext extends Context {
-	wallet: FlowWallet;
+    wallet: FlowWallet;
+}
+
+interface URLDef {
+    url: string;
+}
+
+export interface FTDisplay {
+    name: string;
+    symbol: string;
+    description: string;
+    externalURL?: URLDef;
+    logos?: {
+        items: Array<{
+            file: URLDef;
+            mediaType: string;
+        }>;
+    };
+    socials?: Record<string, URLDef>;
 }
 
 export interface EVMAssetStatus {
     evmAddress: string;
-    isNFT: boolean;
     isRegistered: boolean;
     isBridged: boolean;
     bridgedAddress: string | null;
     bridgedContractName: string | null;
+    display: FTDisplay | null;
 }
 
 export interface TokenStatus {
@@ -55,4 +73,5 @@ export interface TokenStatus {
         address: string;
         contractName: string;
     };
+    onchainLogoUri?: string;
 }

@@ -62,6 +62,7 @@ async function checkDirectory(
                   contractName: evmAssetStatus.bridgedContractName || "",
               }
             : undefined,
+        onchainLogoUri: evmAssetStatus.display?.logos?.items[0]?.file?.url,
     };
 }
 

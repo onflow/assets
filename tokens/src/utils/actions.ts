@@ -1,4 +1,4 @@
-import scriptGetFtOrNftContractByEVM from "../cadence/scripts/get-ft-or-nft-contract-by-evm.cdc?raw";
+import scriptGetFtContractByEVM from "../cadence/scripts/get-ft-contract-by-evm.cdc?raw";
 import trxMaintainerUpdateCustomDisplay from "../cadence/transactions/maintainer-update-customized-ft-display.cdc?raw";
 import trxRegisterEVMAsset from "../cadence/transactions/register-evm-asset.cdc?raw";
 
@@ -12,7 +12,7 @@ export async function getEVMAssets(
     evmContractAddress: string,
 ): Promise<EVMAssetStatus | null> {
     const result = await flowWallet.executeScript(
-        scriptGetFtOrNftContractByEVM,
+        scriptGetFtContractByEVM,
         (arg, t) => [arg(evmContractAddress.toLowerCase(), t.String)],
         null,
     );

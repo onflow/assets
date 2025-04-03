@@ -1,3 +1,5 @@
+import "FungibleTokenMetadataViews"
+
 import "EVM"
 import "FlowEVMBridge"
 import "FlowEVMBridgeConfig"
@@ -22,7 +24,10 @@ fun main(
         return nil
     }
 
-    let isNFT = FlowEVMBridgeUtils.isERC721(evmContractAddress: acct)
+    let isERC20 = FlowEVMBridgeUtils.isERC20(evmContractAddress: acct)
+    if isERC20 == false {
+        return nil
+    }
 
     var bridgedAddress: Address? = nil
     var bridgedContractName: String? = nil
@@ -31,21 +36,30 @@ fun main(
         bridgedContractName = FlowEVMBridgeUtils.getContractName(fromType: type)
     }
 
+    var display: FungibleTokenMetadataViews.FTDisplay? = nil
+    let isRegistered: Bool = EVMTokenList.isEVMAddressRegistered(acct.toString())
+    if isRegistered {
+        let registry = EVMTokenList.borrowRegistry()
+        if let entry = registry.borrowFungibleTokenEntry(acct.toString()) {
+            if let displayRef = entry.getDisplay(nil) {
+                display = displayRef.display
+            }
+        }
+    }
+
     return EVMAssetStatus(
         address: acct,
-        isNFT: isNFT,
-        isRegistered: EVMTokenList.isEVMAddressRegistered(acct.toString()),
+        isRegistered: isRegistered,
         isBridged: isRequires == false,
         bridgedAddress: bridgedAddress,
-        bridgedContractName: bridgedContractName
+        bridgedContractName: bridgedContractName,
+        display: display
     )
 }
 
 access(all) struct EVMAssetStatus {
     access(all)
     let evmAddress: String
-    access(all)
-    let isNFT: Bool
     access(all)
     let isRegistered: Bool
     access(all)
@@ -54,20 +68,22 @@ access(all) struct EVMAssetStatus {
     let bridgedAddress: Address?
     access(all)
     let bridgedContractName: String?
+    access(all)
+    let display: FungibleTokenMetadataViews.FTDisplay?
 
     init(
         address: EVM.EVMAddress,
-        isNFT: Bool,
         isRegistered: Bool,
         isBridged: Bool,
         bridgedAddress: Address?,
-        bridgedContractName: String?
+        bridgedContractName: String?,
+        display: FungibleTokenMetadataViews.FTDisplay?
     ) {
         self.evmAddress = address.toString()
-        self.isNFT = isNFT
         self.isRegistered = isRegistered
         self.isBridged = isBridged
         self.bridgedAddress = bridgedAddress
         self.bridgedContractName = bridgedContractName
+        self.display = display
     }
 }
