@@ -304,6 +304,20 @@
 				"type": "file",
 				"location": "emulator-account.pkey"
 			}
+		},
+		"maintainer-mainnet": {
+			"address": "ccb6b99413f0f036",
+			"key": {
+				"type": "file",
+				"location": "maintainer-mainnet.pkey"
+			}
+		},
+		"maintainer-testnet": {
+			"address": "29e1dc0f23cb56b9",
+			"key": {
+				"type": "file",
+				"location": "maintainer-testnet.pkey"
+			}
 		}
 	}
 }
