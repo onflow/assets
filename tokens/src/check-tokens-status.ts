@@ -106,6 +106,7 @@ async function main() {
 
         console.log(`Token status check completed successfully for ${network}`);
         console.log(`Tokens found: ${tokens.length}`);
+        process.exit(0);
     } catch (error) {
         console.error("Error checking token status:", error);
         process.exit(1);

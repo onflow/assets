@@ -130,6 +130,7 @@ async function main() {
     }
 
     console.log("\n[Script] All contracts processed");
+    process.exit(0);
 }
 
 main().catch(console.error);
