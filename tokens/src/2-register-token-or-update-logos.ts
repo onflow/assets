@@ -33,6 +33,17 @@ async function waitForTransaction(connector: FlowConnector, txid: string) {
     return status;
 }
 
+async function checkBalance(ctx: FlowBlockchainContext, requiredBalance: number) {
+    const balance = await ctx.wallet.connector.getAccount(ctx.wallet.address);
+    console.log(`[Balance] ${ctx.wallet.address}: ${balance.balance}`);
+    if (balance.balance < requiredBalance) {
+        console.error(
+            `[Balance] Insufficient balance: ${balance.balance}, required: ${requiredBalance}`,
+        );
+        throw new Error("Insufficient balance");
+    }
+}
+
 async function registerToken(ctx: FlowBlockchainContext, address: string) {
     console.log(`\n[Register] Registering ${address}...`);
     const txid = await registerEVMAsset(ctx.wallet, address);
@@ -91,6 +102,11 @@ async function main() {
 
         try {
             if (!contract.registered || !contract.bridged) {
+                // Bridging token requires 1 FLOW
+                if (!contract.bridged) {
+                    await checkBalance(ctx, 1);
+                }
+                // Register token
                 await registerToken(ctx, contract.address.toLowerCase());
             }
 
