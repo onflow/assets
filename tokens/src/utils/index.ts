@@ -2,7 +2,7 @@ import { networkName } from "./config";
 import { FlowConnector, FlowWallet, type NetworkType } from "./flow";
 
 import flowJSON from "../../flow.json" assert { type: "json" };
-import type { Context } from "./types";
+import type { Context, FlowBlockchainContext } from "./types";
 
 export * from "./config";
 
@@ -15,9 +15,9 @@ export function logTimeWrapper(fn: (...args: unknown[]) => Promise<unknown>) {
     };
 }
 
-export async function buildBlockchainContext() {
+export async function buildBlockchainContext(): Promise<FlowBlockchainContext> {
     const connecter = new FlowConnector(flowJSON, networkName as NetworkType);
     const wallet = new FlowWallet(connecter);
 
-    return { wallet } as Context;
+    return { wallet };
 }

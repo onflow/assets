@@ -9,6 +9,7 @@
     "sha3": "^2.1.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@types/bun": "latest",
     "@types/elliptic": "^6.4.18"
   },

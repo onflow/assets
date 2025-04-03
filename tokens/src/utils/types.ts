@@ -1,5 +1,6 @@
 import type { ArgsFn } from "@onflow/fcl-core/types/exec/args";
 import type { Account } from "@onflow/typedefs";
+import type { FlowWallet } from "./flow";
 
 export type Authz = (account: Account) => Promise<object> | object;
 
@@ -29,6 +30,10 @@ export interface IFlowSigner {
 
 export interface Context extends Record<string, unknown> {}
 
+export interface FlowBlockchainContext extends Context {
+	wallet: FlowWallet;
+}
+
 export interface EVMAssetStatus {
     evmAddress: string;
     isNFT: boolean;
@@ -36,4 +41,18 @@ export interface EVMAssetStatus {
     isBridged: boolean;
     bridgedAddress: string | null;
     bridgedContractName: string | null;
+}
+
+export interface TokenStatus {
+    address: string;
+    registered?: boolean;
+    bridged?: boolean;
+    logos: {
+        png: boolean;
+        svg: boolean;
+    };
+    cadence?: {
+        address: string;
+        contractName: string;
+    };
 }

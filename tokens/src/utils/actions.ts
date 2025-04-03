@@ -1,5 +1,5 @@
 import scriptGetFtOrNftContractByEVM from "../cadence/scripts/get-ft-or-nft-contract-by-evm.cdc?raw";
-import trxMaintainerUpdateCustomDisplay from "../cadence/transactions/maintainer-update-customized-ft-display?raw";
+import trxMaintainerUpdateCustomDisplay from "../cadence/transactions/maintainer-update-customized-ft-display.cdc?raw";
 import trxRegisterEVMAsset from "../cadence/transactions/register-evm-asset.cdc?raw";
 
 import type { FlowWallet } from "./flow";
@@ -13,7 +13,7 @@ export async function getEVMAssets(
 ): Promise<EVMAssetStatus | null> {
     const result = await flowWallet.executeScript(
         scriptGetFtOrNftContractByEVM,
-        (arg, t) => [arg(evmContractAddress, t.Address)],
+        (arg, t) => [arg(evmContractAddress.toLowerCase(), t.String)],
         null,
     );
     return result;
@@ -45,7 +45,7 @@ export async function registerEVMAsset(
     evmContractAddress: string,
 ): Promise<string> {
     const txid = await flowWallet.sendTransaction(trxRegisterEVMAsset, (arg, t) => [
-        arg(evmContractAddress, t.String),
+        arg(evmContractAddress.toLowerCase(), t.String),
     ]);
     return txid;
 }
