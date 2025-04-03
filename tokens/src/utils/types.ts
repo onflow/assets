@@ -28,3 +28,12 @@ export interface IFlowSigner {
 }
 
 export interface Context extends Record<string, unknown> {}
+
+export interface EVMAssetStatus {
+    evmAddress: string;
+    isNFT: boolean;
+    isRegistered: boolean;
+    isBridged: boolean;
+    bridgedAddress: string | null;
+    bridgedContractName: string | null;
+}
