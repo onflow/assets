@@ -3,7 +3,7 @@ import path from "node:path";
 
 import { buildBlockchainContext } from "./utils";
 import { getEVMAssets } from "./utils/actions";
-import { type Network, SHORTLIST_DIR, getShortlistedContractsPath, networks } from "./utils/config";
+import { type Network, REGISTRY_DIR, getShortlistedContractsPath, networks } from "./utils/config";
 import type { FlowBlockchainContext, TokenStatus } from "./utils/types";
 import { customizableFields } from "./utils/types";
 
@@ -103,11 +103,11 @@ async function main() {
     const ctx = await buildBlockchainContext();
 
     try {
-        const dirs = await fs.readdir(SHORTLIST_DIR);
+        const dirs = await fs.readdir(REGISTRY_DIR);
         console.log(`📂 Found ${dirs.length} directories to process\n`);
 
         for (const dir of dirs) {
-          const dirPath = path.join(SHORTLIST_DIR, dir);
+          const dirPath = path.join(REGISTRY_DIR, dir);
           const stat = await fs.stat(dirPath);
 
           if (stat.isDirectory()) {

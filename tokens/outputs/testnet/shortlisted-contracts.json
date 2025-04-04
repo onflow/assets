@@ -1,7 +1,7 @@
 [
   {
     "address": "0xd3bf53dac106a0290b0483ecbc89d40fcc961f3e",
-    "registered": false,
+    "registered": true,
     "bridged": true,
     "logos": {
       "png": false,
@@ -11,6 +11,7 @@
     "cadence": {
       "address": "0x7e60df042a9c0868",
       "contractName": "FlowToken"
-    }
+    },
+    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/shortlist/testnet:0xd3bf53dac106a0290b0483ecbc89d40fcc961f3e/logo.svg"
   }
 ]

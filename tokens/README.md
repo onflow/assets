@@ -7,9 +7,9 @@ This directory contains logo assets and metadata modifications for tokens on the
 Each token should have its own folder, with logo files placed in format-specific subfolders:
 
 ```text
-- shortlist/{contractIdentifier}/logo.png
-- shortlist/{contractIdentifier}/logo.svg
-- shortlist/{contractIdentifier}/mods.json
+- registry/{contractIdentifier}/logo.png
+- registry/{contractIdentifier}/logo.svg
+- registry/{contractIdentifier}/mods.json
 ```
 
 - `logo.svg` - SVG format token logo, optimized and viewboxed
@@ -18,8 +18,8 @@ Each token should have its own folder, with logo files placed in format-specific
 
 For contract identifiers, use the token contract address or a unique identifier for testnet tokens.
 
-- Mainnet tokens should use the contract address as the folder name: `shortlist/{contractAddress}/`
-- Testnet tokens should use the `testnet:` prefix: `shortlist/testnet:{contractAddress}/`
+- Mainnet tokens should use the contract address as the folder name: `registry/{contractAddress}/`
+- Testnet tokens should use the `testnet:` prefix: `registry/testnet:{contractAddress}/`
 
 ## Adding a New Token
 
