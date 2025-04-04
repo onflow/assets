@@ -21,12 +21,15 @@ assets/
 │       ├── svg/logo.svg
 │       └── png/logo.png
 └── tokens/
-    ├── logos/              # Token Logos, to be used and registered in the Flow TokenList
+    ├── registry/               # Token registry, to be used and registered in the Flow TokenList
     │   └── <contract-address>/ # For testnet token use `testnet:<contract-address>`
     │       ├── logo.svg
     │       └── logo.png
-    ├── token-list-jsons/   # Submodule of Flow TokenList JSONs
-    └── verified.json
+    │       └── mods.json
+    ├── outputs/                # Generated token list
+    │   └── <network>/
+    │       └── token-list.json
+    └── src/                    # Source code of scripts
 ```
 
 ## How to add a new token?
@@ -52,14 +55,6 @@ Refer to [Token Assets Guide](tokens/README.md) for detailed instructions on add
 - Resolution: 256x256 pixels recommended (minimum 128x128)
 - Format: 32-bit PNG (with transparency)
 - Background: Transparent
-
-## Adding New Assets
-
-1. Identify the correct category (`tokens`, `environments`, or `dapps`)
-2. Create a folder using the project name (all lowercase, no special characters or spaces)
-3. Place the optimized `logo.svg` and/or `logo.png` in `svg/` and `png/` subfolders
-4. Ensure your images meet the requirements above
-5. Submit a pull request with your additions
 
 ## License
 
