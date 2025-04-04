@@ -17,6 +17,15 @@ jobs:
       pull-requests: write
       contents: read
 
+    env:
+      NETWORK: ${{ matrix.network }}
+      FLOW_ADDRESS: ${{ matrix.network == 'mainnet' && vars.MAINNET_FLOW_ADDRESS || vars.TESTNET_FLOW_ADDRESS }}
+      FLOW_PRIVATE_KEY: ${{ matrix.network == 'mainnet' && secrets.MAINNET_FLOW_PRIVATE_KEY || secrets.TESTNET_FLOW_PRIVATE_KEY }}
+      MAINNET_FLOW_ADDRESS: ${{ vars.MAINNET_FLOW_ADDRESS }}
+      TESTNET_FLOW_ADDRESS: ${{ vars.TESTNET_FLOW_ADDRESS }}
+      MAINNET_FLOW_PRIVATE_KEY: ${{ secrets.MAINNET_FLOW_PRIVATE_KEY }}
+      TESTNET_FLOW_PRIVATE_KEY: ${{ secrets.TESTNET_FLOW_PRIVATE_KEY }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -39,16 +48,18 @@ jobs:
         with:
           format: 'json'
 
+      - name: Debug environment variables
+        run: |
+            echo "Network: $NETWORK"
+            echo "Flow Address: $FLOW_ADDRESS"
+            echo "Mainnet Flow Address: $MAINNET_FLOW_ADDRESS"
+            echo "Testnet Flow Address: $TESTNET_FLOW_ADDRESS"
+
       - name: Filter and validate changes
         id: validate
 
         env:
           CHANGED_FILES: ${{ steps.changed-files.outputs.all }}
-          NETWORK: ${{ matrix.network }}
-          MAINNET_FLOW_ADDRESS: ${{ vars.MAINNET_FLOW_ADDRESS }}
-          TESTNET_FLOW_ADDRESS: ${{ vars.TESTNET_FLOW_ADDRESS }}
-          MAINNET_FLOW_PRIVATE_KEY: ${{ secrets.MAINNET_FLOW_PRIVATE_KEY }}
-          TESTNET_FLOW_PRIVATE_KEY: ${{ secrets.TESTNET_FLOW_PRIVATE_KEY }}
 
         run: |
           # Extract and filter changed folders from the registry directory
