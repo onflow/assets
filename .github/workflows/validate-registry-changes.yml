@@ -34,7 +34,9 @@ jobs:
           bun-version: latest
 
       - name: Install dependencies
-        run: bun install
+        run: |
+          cd tokens
+          bun install
 
       - name: Get changed folders
         id: changed-files
