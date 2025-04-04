@@ -27,14 +27,13 @@ export const getShortlistedContractsPath = (network: Network) =>
 export const getTokenListPath = (network: Network) =>
     join(getNetworkOutputPath(network), "token-list.json");
 export const getModsPath = (network: Network, address: string) =>
-    join(
-        ROOT_DIR,
-        getLogoBasePath(network === "testnet" ? `testnet:${address}` : address),
-        "mods.json",
-    );
+    join(ROOT_DIR, getLogoBasePath(getFolderName(network, address)), "mods.json");
 
 // URLs
 export const GITHUB_RAW_BASE = "https://raw.githubusercontent.com/onflow/assets/main";
 export const getLogoBasePath = (address: string) => `tokens/shortlist/${address}`;
-export const getLogoUrl = (address: string, format: "svg" | "png") =>
-    `${GITHUB_RAW_BASE}/${getLogoBasePath(address)}/logo.${format}`;
+export const getLogoUrl = (network: Network, address: string, format: "svg" | "png") =>
+    `${GITHUB_RAW_BASE}/${getLogoBasePath(getFolderName(network, address))}/logo.${format}`;
+
+export const getFolderName = (network: Network, address: string) =>
+    network === "testnet" ? `testnet:${address}` : address;

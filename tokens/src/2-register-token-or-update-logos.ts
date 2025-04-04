@@ -99,9 +99,9 @@ async function main() {
 
             // Check logo URI
             const targetUri = contract.logos.svg
-                ? getLogoUrl(contract.address, "svg")
+                ? getLogoUrl(network, contract.address, "svg")
                 : contract.logos.png
-                  ? getLogoUrl(contract.address, "png")
+                  ? getLogoUrl(network, contract.address, "png")
                   : undefined;
 
             if (
