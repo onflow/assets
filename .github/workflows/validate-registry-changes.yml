@@ -17,11 +17,6 @@ jobs:
       pull-requests: write
       contents: read
 
-    env:
-      NETWORK: ${{ matrix.network }}
-      FLOW_ADDRESS: ${{ matrix.network == 'mainnet' && vars.MAINNET_FLOW_ADDRESS || vars.TESTNET_FLOW_ADDRESS }}
-      FLOW_PRIVATE_KEY: ${{ matrix.network == 'mainnet' && secrets.MAINNET_FLOW_PRIVATE_KEY || secrets.TESTNET_FLOW_PRIVATE_KEY }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -46,6 +41,13 @@ jobs:
 
       - name: Filter and validate changes
         id: validate
+
+        env:
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all }}
+          NETWORK: ${{ matrix.network }}
+          FLOW_ADDRESS: ${{ matrix.network == 'mainnet' && vars.MAINNET_FLOW_ADDRESS || vars.TESTNET_FLOW_ADDRESS }}
+          FLOW_PRIVATE_KEY: ${{ matrix.network == 'mainnet' && secrets.MAINNET_FLOW_PRIVATE_KEY || secrets.TESTNET_FLOW_PRIVATE_KEY }}
+
         run: |
           # Extract and filter changed folders from the registry directory
           CHANGED_FOLDERS=$(bun -e "
@@ -77,8 +79,6 @@ jobs:
 
           # Exit with the validation script's exit code
           exit $VALIDATION_EXIT_CODE
-        env:
-          CHANGED_FILES: ${{ steps.changed-files.outputs.all }}
 
       - name: Create or update comment
         if: steps.validate.outputs.skip_comment != 'true'
