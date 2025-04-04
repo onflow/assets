@@ -2,7 +2,7 @@ import { existsSync } from "node:fs";
 import { buildBlockchainContext } from "./utils";
 import { registerEVMAsset, updateCustomizedDisplay } from "./utils/actions";
 import { type Network, getLogoUrl, getShortlistedContractsPath, networks } from "./utils/config";
-import { FlowConnector } from "./utils/flow";
+import type { FlowConnector } from "./utils/flow";
 import type { TokenStatus } from "./utils/types";
 import type { FlowBlockchainContext } from "./utils/types";
 

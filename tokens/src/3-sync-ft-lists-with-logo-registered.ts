@@ -119,9 +119,12 @@ const writeJSONFile = async (data: TokenList, network: Network): Promise<void> =
         data.version.minor = 0;
         data.version.patch = 0;
     } else if (newTokenAdded) {
+        data.version.major = (originList ?? data).version.major;
         data.version.minor = (originList ?? data).version.minor + 1;
         data.version.patch = 0;
     } else {
+        data.version.major = (originList ?? data).version.major;
+        data.version.minor = (originList ?? data).version.minor;
         data.version.patch = (originList ?? data).version.patch + 1;
     }
 
