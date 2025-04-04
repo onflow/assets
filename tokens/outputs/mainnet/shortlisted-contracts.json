@@ -7,6 +7,7 @@
       "png": false,
       "svg": false
     },
+    "mods": false,
     "cadence": {
       "address": "0x1e4aa0b87d10b141",
       "contractName": "EVMVMBridgedToken_f1815bd50389c46847f0bda824ec8da914045d14"
@@ -21,6 +22,7 @@
       "png": false,
       "svg": false
     },
+    "mods": false,
     "cadence": {
       "address": "0x1e4aa0b87d10b141",
       "contractName": "EVMVMBridgedToken_1b97100ea1d7126c4d60027e231ea4cb25314bdb"
@@ -35,6 +37,7 @@
       "png": false,
       "svg": false
     },
+    "mods": false,
     "cadence": {
       "address": "0x1e4aa0b87d10b141",
       "contractName": "EVMVMBridgedToken_2f6f07cdcf3588944bf4c42ac74ff24bf56e7590"
@@ -49,6 +52,7 @@
       "png": false,
       "svg": false
     },
+    "mods": false,
     "cadence": {
       "address": "0xd6f80565193ad727",
       "contractName": "stFlowToken"
@@ -63,6 +67,7 @@
       "png": false,
       "svg": false
     },
+    "mods": false,
     "cadence": {
       "address": "0x1e4aa0b87d10b141",
       "contractName": "EVMVMBridgedToken_674843c06ff83502ddb4d37c2e09c01cda38cbc8"
@@ -77,6 +82,7 @@
       "png": false,
       "svg": false
     },
+    "mods": false,
     "cadence": {
       "address": "0xf1ab99c82dee3526",
       "contractName": "USDCFlow"
@@ -91,6 +97,7 @@
       "png": true,
       "svg": false
     },
+    "mods": false,
     "cadence": {
       "address": "0x1e4aa0b87d10b141",
       "contractName": "EVMVMBridgedToken_2aabea2058b5ac2d339b163c6ab6f2b6d53aabed"
@@ -105,6 +112,7 @@
       "png": true,
       "svg": true
     },
+    "mods": true,
     "cadence": {
       "address": "0x1654653399040a61",
       "contractName": "FlowToken"
@@ -119,6 +127,7 @@
       "png": false,
       "svg": false
     },
+    "mods": false,
     "cadence": {
       "address": "0x1e4aa0b87d10b141",
       "contractName": "EVMVMBridgedToken_a0197b2044d28b08be34d98b23c9312158ea9a18"

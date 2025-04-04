@@ -48,7 +48,7 @@
 			"hash": "d94f029ca11147e7d37f2d76ebb71a0c3f5e6c49a04df13a5717631a1d4be2d9",
 			"aliases": {
 				"mainnet": "15a918087ab12d86",
-				"testnet": "0b86f928a1fa7798"
+				"testnet": "b86f928a1fa7798e"
 			}
 		},
 		"FTViewUtils": {
@@ -56,7 +56,7 @@
 			"hash": "ef8343697ebcb455a835bc9f87b8060f574c3d968644de47f6613cebf05d7749",
 			"aliases": {
 				"mainnet": "15a918087ab12d86",
-				"testnet": "0b86f928a1fa7798"
+				"testnet": "b86f928a1fa7798e"
 			}
 		},
 		"FlowEVMBridge": {
@@ -221,7 +221,7 @@
 			"hash": "30bcd96975d4b175873fd516ebf58f64bfbf09e83c29c907abf98296e0347626",
 			"aliases": {
 				"mainnet": "15a918087ab12d86",
-				"testnet": "0b86f928a1fa7798"
+				"testnet": "b86f928a1fa7798e"
 			}
 		},
 		"NFTViewUtils": {
@@ -229,7 +229,7 @@
 			"hash": "9c0fe5d7ec4da744c1f7a2f2e5ce098879e86cd77e7e3c90ffb1b3974d797e1b",
 			"aliases": {
 				"mainnet": "15a918087ab12d86",
-				"testnet": "0b86f928a1fa7798"
+				"testnet": "b86f928a1fa7798e"
 			}
 		},
 		"NonFungibleToken": {
@@ -287,7 +287,7 @@
 			"hash": "37ef9b2a71c1b0daa031c261f731466fcbefad998590177c798b56b61a95489a",
 			"aliases": {
 				"mainnet": "15a918087ab12d86",
-				"testnet": "0b86f928a1fa7798"
+				"testnet": "b86f928a1fa7798e"
 			}
 		}
 	},

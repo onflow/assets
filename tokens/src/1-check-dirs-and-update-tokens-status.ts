@@ -5,6 +5,7 @@ import { buildBlockchainContext } from "./utils";
 import { getEVMAssets } from "./utils/actions";
 import { LOGOS_DIR, type Network, getShortlistedContractsPath, networks } from "./utils/config";
 import type { FlowBlockchainContext, TokenStatus } from "./utils/types";
+import { customizableFields } from "./utils/types";
 
 const EVM_ADDRESS_REGEX = /^(?:testnet:)?0x[a-fA-F0-9]{40}$/;
 
@@ -24,6 +25,22 @@ async function checkDirectory(
     const hasPng = files.includes("logo.png");
     const hasSvg = files.includes("logo.svg");
 
+    // Check for mods.json and validate its fields
+    let hasValidMods = false;
+    if (files.includes("mods.json")) {
+        try {
+            const modsContent = await fs.readFile(path.join(dirPath, "mods.json"), "utf-8");
+            const mods = JSON.parse(modsContent);
+
+            // Check if at least one required field is present and valid
+            hasValidMods = customizableFields.some(
+                (field) => typeof mods[field] === "string" && mods[field].trim() !== "",
+            );
+        } catch (error) {
+            console.error(`Error reading/parsing mods.json in ${dirPath}:`, error);
+        }
+    }
+
     // Extract EVM address (remove testnet: prefix if exists) but keep original case
     const evmAddress = dirName.startsWith("testnet:") ? dirName.slice(8) : dirName;
 
@@ -37,6 +54,7 @@ async function checkDirectory(
                 png: hasPng,
                 svg: hasSvg,
             },
+            mods: hasValidMods,
         };
     }
 
@@ -48,6 +66,7 @@ async function checkDirectory(
             png: hasPng,
             svg: hasSvg,
         },
+        mods: hasValidMods,
         cadence: evmAssetStatus.bridgedAddress
             ? {
                   address: evmAssetStatus.bridgedAddress,

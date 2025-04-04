@@ -69,6 +69,7 @@ export interface TokenStatus {
         png: boolean;
         svg: boolean;
     };
+    mods: boolean;
     cadence?: {
         address: string;
         contractName: string;
@@ -76,8 +77,18 @@ export interface TokenStatus {
     onchainLogoUri?: string;
 }
 
-export interface Token {
+export const customizableFields = ["symbol", "name", "description"] as const;
+
+export type CustomizableTokenFields = {
+    [K in (typeof customizableFields)[number]]: string;
+};
+
+export interface Token extends CustomizableTokenFields {
     address: string;
+    decimals: number;
+    logoURI: string;
+    flowIdentifier: string;
+    flowAddress: string;
     contractName: string;
     [key: string]: unknown;
 }
