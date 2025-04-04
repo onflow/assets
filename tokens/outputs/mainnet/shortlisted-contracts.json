@@ -19,7 +19,7 @@
     "registered": true,
     "bridged": true,
     "logos": {
-      "png": false,
+      "png": true,
       "svg": false
     },
     "mods": false,
@@ -102,7 +102,7 @@
       "address": "0x1e4aa0b87d10b141",
       "contractName": "EVMVMBridgedToken_2aabea2058b5ac2d339b163c6ab6f2b6d53aabed"
     },
-    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/shortlist/0x2aaBea2058b5aC2D339b163C6Ab6f2b6d53aabED/logo.png"
+    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x2aaBea2058b5aC2D339b163C6Ab6f2b6d53aabED/logo.png"
   },
   {
     "address": "0xd3bF53DAC106A0290B0483EcBC89d40FcC961f3e",
