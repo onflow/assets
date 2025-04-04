@@ -10,17 +10,17 @@ jobs:
     strategy:
       matrix:
         network: [testnet, mainnet]
+
     runs-on: ubuntu-latest
+
     permissions:
       pull-requests: write
       contents: read
 
     env:
       NETWORK: ${{ matrix.network }}
-      MAINNET_FLOW_ADDRESS: ${{ vars.MAINNET_FLOW_ADDRESS }}
-      TESTNET_FLOW_ADDRESS: ${{ vars.TESTNET_FLOW_ADDRESS }}
-      MAINNET_FLOW_PRIVATE_KEY: ${{ secrets.MAINNET_FLOW_PRIVATE_KEY }}
-      TESTNET_FLOW_PRIVATE_KEY: ${{ secrets.TESTNET_FLOW_PRIVATE_KEY }}
+      FLOW_ADDRESS: ${{ matrix.network == 'mainnet' && vars.MAINNET_FLOW_ADDRESS || vars.TESTNET_FLOW_ADDRESS }}
+      FLOW_PRIVATE_KEY: ${{ matrix.network == 'mainnet' && secrets.MAINNET_FLOW_PRIVATE_KEY || secrets.TESTNET_FLOW_PRIVATE_KEY }}
 
     steps:
       - name: Checkout repository
