@@ -124,6 +124,10 @@ async function main() {
         // Write filtered token list
         await writeJSONFile(tokenList, network);
     }
+
+    // Log completed
+    console.log("Synced FT lists completed.");
+    process.exit(0);
 }
 
 main().catch(console.error);
