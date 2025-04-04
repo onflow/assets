@@ -1,23 +1,25 @@
 # Token Assets
 
-This directory contains logo assets for tokens on the Flow blockchain.
+This directory contains logo assets and metadata modifications for tokens on the Flow blockchain.
 
 ## Directory Structure
 
 Each token should have its own folder, with logo files placed in format-specific subfolders:
 
-```bash
-logos/{contractIdentifier}/logo.png
-logos/{contractIdentifier}/logo.svg
+```text
+- shortlist/{contractIdentifier}/logo.png
+- shortlist/{contractIdentifier}/logo.svg
+- shortlist/{contractIdentifier}/mods.json
 ```
 
 - `logo.svg` - SVG format token logo, optimized and viewboxed
 - `logo.png` - PNG format token logo (256x256px recommended)
+- `mods.json` - Metadata modifications for the token
 
 For contract identifiers, use the token contract address or a unique identifier for testnet tokens.
 
-- Mainnet tokens should use the contract address as the folder name: `logos/{contractAddress}/`
-- Testnet tokens should use the `testnet:` prefix: `logos/testnet:{contractAddress}/`
+- Mainnet tokens should use the contract address as the folder name: `shortlist/{contractAddress}/`
+- Testnet tokens should use the `testnet:` prefix: `shortlist/testnet:{contractAddress}/`
 
 ## Adding a New Token
 
