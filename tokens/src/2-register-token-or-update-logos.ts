@@ -12,33 +12,33 @@ async function checkUrlAvailability(url: string): Promise<boolean> {
         return response.ok;
     } catch (error: unknown) {
         const errorMessage = error instanceof Error ? error.message : String(error);
-        console.log(`[URL Check] Failed to check ${url}: ${errorMessage}`);
+        console.log(`❌ Failed to check ${url}: ${errorMessage}`);
         return false;
     }
 }
 
 async function waitForTransaction(connector: FlowConnector, txid: string) {
-    console.log(`\n[Transaction] Waiting for ${txid}...`);
+    console.log(`\n⏳ Waiting for transaction ${txid}...`);
     const status = await connector.onceTransactionExecuted(txid);
     console.log(
-        `[Transaction] Status: ${status.status}${status.errorMessage ? ` (${status.errorMessage})` : ""}\n`,
+        `📝 Transaction status: ${status.status}${status.errorMessage ? ` (${status.errorMessage})` : ""}\n`,
     );
     return status;
 }
 
 async function checkBalance(ctx: FlowBlockchainContext, requiredBalance: number) {
     const balance = await ctx.wallet.connector.getAccount(ctx.wallet.address);
-    console.log(`[Balance] ${ctx.wallet.address}: ${balance.balance}`);
+    console.log(`💰 Balance: ${balance.balance} FLOW`);
     if (balance.balance < requiredBalance) {
         console.error(
-            `[Balance] Insufficient balance: ${balance.balance}, required: ${requiredBalance}`,
+            `❌ Insufficient balance: ${balance.balance} FLOW, required: ${requiredBalance} FLOW`,
         );
         throw new Error("Insufficient balance");
     }
 }
 
 async function registerToken(ctx: FlowBlockchainContext, address: string) {
-    console.log(`\n[Register] Registering ${address}...`);
+    console.log(`\n📝 Registering ${address}...`);
     const txid = await registerEVMAsset(ctx.wallet, address);
     await waitForTransaction(ctx.wallet.connector, txid);
     return txid;
@@ -50,7 +50,7 @@ async function updateTokenLogo(
     cadenceContractName: string,
     logoUri: string,
 ) {
-    console.log(`\n[Update Logo] Updating logo for ${cadenceAddress} to ${logoUri}...`);
+    console.log(`\n🖼️ Updating logo for ${cadenceAddress} to ${logoUri}...`);
     const txid = await updateCustomizedDisplay(
         ctx.wallet,
         cadenceAddress,
@@ -70,24 +70,22 @@ async function main() {
         process.exit(1);
     }
 
-    console.log(`\n[Script] Starting process on ${network}`);
+    console.log(`\n🔍 Starting token registration process on ${network.toUpperCase()}`);
 
     const ctx = await buildBlockchainContext();
     const shortlistedPath = getShortlistedContractsPath(network);
 
     if (!existsSync(shortlistedPath)) {
-        console.error(`[Script] Shortlisted contracts file not found for network: ${network}`);
+        console.error(`❌ Shortlisted contracts file not found for network: ${network}`);
         process.exit(1);
     }
 
     const shortlistedContracts: TokenStatus[] = require(shortlistedPath);
-    console.log(`[Script] Found ${shortlistedContracts.length} contracts\n`);
+    console.log(`📂 Found ${shortlistedContracts.length} contracts to process\n`);
 
     for (const contract of shortlistedContracts) {
-        console.log(`[Contract] ${contract.address}`);
-        console.log(
-            `[Contract] Status: ${contract.registered ? "Registered" : "Not Registered"} | ${contract.bridged ? "Bridged" : "Not Bridged"}`,
-        );
+        console.log(`\n📝 Processing ${contract.address}`);
+        console.log(`📊 Status: Registered:${contract.registered} Bridged:${contract.bridged}`);
 
         try {
             if (!contract.registered || !contract.bridged) {
@@ -111,18 +109,18 @@ async function main() {
                 contract.onchainLogoUri?.toLowerCase() !== targetUri.toLowerCase()
             ) {
                 if (!contract.cadence) {
-                    console.error(`[Contract] No cadence info found for ${contract.address}`);
+                    console.error(`❌ No cadence info found for ${contract.address}`);
                     continue;
                 }
 
                 // Check URL availability
-                console.log(`[URL Check] Verifying ${targetUri}...`);
+                console.log(`🔍 Verifying logo URL: ${targetUri}`);
                 const isAvailable = await checkUrlAvailability(targetUri);
                 if (!isAvailable) {
-                    console.error(`[URL Check] Logo URL is not accessible: ${targetUri}`);
+                    console.error(`❌ Logo URL is not accessible: ${targetUri}`);
                     continue;
                 }
-                console.log("[URL Check] Logo URL is accessible\n");
+                console.log("✅ Logo URL is accessible\n");
 
                 await updateTokenLogo(
                     ctx,
@@ -132,11 +130,11 @@ async function main() {
                 );
             }
         } catch (error) {
-            console.error(`[Contract] Failed to process ${contract.address}:`, error);
+            console.error(`❌ Failed to process ${contract.address}:`, error);
         }
     }
 
-    console.log("\n[Script] All contracts processed");
+    console.log("\n✨ All contracts processed successfully");
     process.exit(0);
 }
 

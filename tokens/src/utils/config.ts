@@ -19,16 +19,22 @@ export const endpoints: Record<Network, string> = {
 // File paths
 export const ROOT_DIR = join(__dirname, "..", "..");
 export const OUTPUTS_DIR = join(ROOT_DIR, "outputs");
-export const LOGOS_DIR = join(ROOT_DIR, "logos");
+export const SHORTLIST_DIR = join(ROOT_DIR, "shortlist");
 
 export const getNetworkOutputPath = (network: Network) => join(OUTPUTS_DIR, network);
 export const getShortlistedContractsPath = (network: Network) =>
     join(getNetworkOutputPath(network), "shortlisted-contracts.json");
 export const getTokenListPath = (network: Network) =>
     join(getNetworkOutputPath(network), "token-list.json");
+export const getModsPath = (network: Network, address: string) =>
+    join(
+        ROOT_DIR,
+        getLogoBasePath(network === "testnet" ? `testnet:${address}` : address),
+        "mods.json",
+    );
 
 // URLs
 export const GITHUB_RAW_BASE = "https://raw.githubusercontent.com/onflow/assets/main";
-export const getLogoBasePath = (address: string) => `tokens/logos/${address}`;
+export const getLogoBasePath = (address: string) => `tokens/shortlist/${address}`;
 export const getLogoUrl = (address: string, format: "svg" | "png") =>
     `${GITHUB_RAW_BASE}/${getLogoBasePath(address)}/logo.${format}`;

@@ -3,7 +3,7 @@ import path from "node:path";
 
 import { buildBlockchainContext } from "./utils";
 import { getEVMAssets } from "./utils/actions";
-import { LOGOS_DIR, type Network, getShortlistedContractsPath, networks } from "./utils/config";
+import { type Network, SHORTLIST_DIR, getShortlistedContractsPath, networks } from "./utils/config";
 import type { FlowBlockchainContext, TokenStatus } from "./utils/types";
 import { customizableFields } from "./utils/types";
 
@@ -15,9 +15,10 @@ async function checkDirectory(
 ): Promise<TokenStatus | null> {
     const dirName = path.basename(dirPath);
 
-    // Check if directory name matches EVM address pattern
     if (!EVM_ADDRESS_REGEX.test(dirName)) {
-        return null;
+      // Check if directory name matches EVM address pattern
+      console.log(`❌ Skipping ${dirName} - invalid EVM address format`);
+      return null;
     }
 
     // Check for logo files
@@ -28,17 +29,17 @@ async function checkDirectory(
     // Check for mods.json and validate its fields
     let hasValidMods = false;
     if (files.includes("mods.json")) {
-        try {
-            const modsContent = await fs.readFile(path.join(dirPath, "mods.json"), "utf-8");
-            const mods = JSON.parse(modsContent);
+      try {
+        const modsContent = await fs.readFile(path.join(dirPath, "mods.json"), "utf-8");
+        const mods = JSON.parse(modsContent);
 
-            // Check if at least one required field is present and valid
-            hasValidMods = customizableFields.some(
-                (field) => typeof mods[field] === "string" && mods[field].trim() !== "",
-            );
-        } catch (error) {
-            console.error(`Error reading/parsing mods.json in ${dirPath}:`, error);
-        }
+        // Check if at least one required field is present and valid
+        hasValidMods = customizableFields.some(
+          (field) => typeof mods[field] === "string" && mods[field].trim() !== "",
+        );
+      } catch (error) {
+        console.error(`Error reading/parsing mods.json in ${dirPath}:`, error);
+      }
     }
 
     // Extract EVM address (remove testnet: prefix if exists) but keep original case
@@ -48,33 +49,42 @@ async function checkDirectory(
     const evmAssetStatus = await getEVMAssets(ctx.wallet, evmAddress.toLowerCase());
 
     if (!evmAssetStatus) {
-        return {
-            address: evmAddress, // Store original case for file path
-            logos: {
-                png: hasPng,
-                svg: hasSvg,
-            },
-            mods: hasValidMods,
-        };
-    }
-
-    return {
-        address: evmAddress, // Store original case for file path
-        registered: evmAssetStatus.isRegistered,
-        bridged: evmAssetStatus.isBridged,
+      console.log(`⚠️ ${evmAddress} - No chain status found`);
+      return {
+        address: evmAddress,
         logos: {
-            png: hasPng,
-            svg: hasSvg,
+          png: hasPng,
+          svg: hasSvg,
         },
         mods: hasValidMods,
-        cadence: evmAssetStatus.bridgedAddress
-            ? {
-                  address: evmAssetStatus.bridgedAddress,
-                  contractName: evmAssetStatus.bridgedContractName || "",
-              }
-            : undefined,
-        onchainLogoUri: evmAssetStatus.display?.logos?.items[0]?.file?.url,
+      };
+    }
+
+    const status = {
+      address: evmAddress,
+      registered: evmAssetStatus.isRegistered,
+      bridged: evmAssetStatus.isBridged,
+      logos: {
+        png: hasPng,
+        svg: hasSvg,
+      },
+      mods: hasValidMods,
+      cadence: evmAssetStatus.bridgedAddress
+        ? {
+            address: evmAssetStatus.bridgedAddress,
+            contractName: evmAssetStatus.bridgedContractName || "",
+          }
+        : undefined,
+      onchainLogoUri: evmAssetStatus.display?.logos?.items[0]?.file?.url,
     };
+
+    const logoStatus = `${hasPng ? "🖼️" : "❌"}${hasSvg ? "📐" : "❌"}`;
+    const modsStatus = hasValidMods ? "📝" : "❌";
+    console.log(
+      `✅ ${evmAddress} - Registered:${status.registered} Bridged:${status.bridged} ${logoStatus} ${modsStatus}`,
+    );
+
+    return status;
 }
 
 async function main() {
@@ -86,41 +96,46 @@ async function main() {
         process.exit(1);
     }
 
-    const outputFile = getShortlistedContractsPath(network);
+    console.log(`\n🔍 Starting token status check for ${network.toUpperCase()}`);
+    console.log(`📁 Output: ${getShortlistedContractsPath(network)}\n`);
 
     const tokens: TokenStatus[] = [];
     const ctx = await buildBlockchainContext();
 
     try {
-        const dirs = await fs.readdir(LOGOS_DIR);
+        const dirs = await fs.readdir(SHORTLIST_DIR);
+        console.log(`📂 Found ${dirs.length} directories to process\n`);
 
         for (const dir of dirs) {
-            const dirPath = path.join(LOGOS_DIR, dir);
-            const stat = await fs.stat(dirPath);
+          const dirPath = path.join(SHORTLIST_DIR, dir);
+          const stat = await fs.stat(dirPath);
 
-            if (stat.isDirectory()) {
-                const isTestnetDir = dir.startsWith("testnet:");
-                // Only process directories that match the current network
-                if (
-                    (network === "mainnet" && !isTestnetDir) ||
-                    (network === "testnet" && isTestnetDir)
-                ) {
-                    const status = await checkDirectory(ctx, dirPath);
-                    if (status) {
-                        tokens.push(status);
-                    }
-                }
+          if (stat.isDirectory()) {
+            const isTestnetDir = dir.startsWith("testnet:");
+            // Only process directories that match the current network
+            if (
+              (network === "mainnet" && !isTestnetDir) ||
+              (network === "testnet" && isTestnetDir)
+            ) {
+              const status = await checkDirectory(ctx, dirPath);
+              if (status) {
+                tokens.push(status);
+              }
+            } else {
+              console.log(`⏩ Skipping ${dir} - network mismatch`);
             }
+          }
         }
 
         // Write results to the appropriate file
-        await fs.writeFile(outputFile, JSON.stringify(tokens, null, 2));
+        console.log(`\n💾 Writing ${tokens.length} token statuses to output file`);
+        await fs.writeFile(getShortlistedContractsPath(network), JSON.stringify(tokens, null, 2));
 
-        console.log(`Token status check completed successfully for ${network}`);
-        console.log(`Tokens found: ${tokens.length}`);
+        console.log("\n✨ Token status check completed successfully");
+        console.log(`📊 Total tokens processed: ${tokens.length}\n`);
         process.exit(0);
     } catch (error) {
-        console.error("Error checking token status:", error);
+        console.error("❌ Error checking token status:", error);
         process.exit(1);
     }
 }
