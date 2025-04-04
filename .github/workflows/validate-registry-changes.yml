@@ -5,6 +5,12 @@ on:
     paths:
       - 'tokens/registry/**'
 
+env:
+  MAINNET_FLOW_ADDRESS: ${{ vars.MAINNET_FLOW_ADDRESS }}
+  TESTNET_FLOW_ADDRESS: ${{ vars.TESTNET_FLOW_ADDRESS }}
+  MAINNET_FLOW_PRIVATE_KEY: ${{ secrets.MAINNET_FLOW_PRIVATE_KEY }}
+  TESTNET_FLOW_PRIVATE_KEY: ${{ secrets.TESTNET_FLOW_PRIVATE_KEY }}
+
 jobs:
   validate:
     strategy:
@@ -21,10 +27,6 @@ jobs:
       NETWORK: ${{ matrix.network }}
       FLOW_ADDRESS: ${{ matrix.network == 'mainnet' && vars.MAINNET_FLOW_ADDRESS || vars.TESTNET_FLOW_ADDRESS }}
       FLOW_PRIVATE_KEY: ${{ matrix.network == 'mainnet' && secrets.MAINNET_FLOW_PRIVATE_KEY || secrets.TESTNET_FLOW_PRIVATE_KEY }}
-      MAINNET_FLOW_ADDRESS: ${{ vars.MAINNET_FLOW_ADDRESS }}
-      TESTNET_FLOW_ADDRESS: ${{ vars.TESTNET_FLOW_ADDRESS }}
-      MAINNET_FLOW_PRIVATE_KEY: ${{ secrets.MAINNET_FLOW_PRIVATE_KEY }}
-      TESTNET_FLOW_PRIVATE_KEY: ${{ secrets.TESTNET_FLOW_PRIVATE_KEY }}
 
     steps:
       - name: Checkout repository
