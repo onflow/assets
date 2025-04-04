@@ -1,0 +1,119 @@
+name: Validate Registry Changes
+
+on:
+  pull_request:
+    paths:
+      - 'tokens/registry/**'
+
+jobs:
+  validate:
+    strategy:
+      matrix:
+        network: [testnet, mainnet]
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+
+    env:
+      NETWORK: ${{ matrix.network }}
+      MAINNET_FLOW_ADDRESS: ${{ vars.MAINNET_FLOW_ADDRESS }}
+      TESTNET_FLOW_ADDRESS: ${{ vars.TESTNET_FLOW_ADDRESS }}
+      MAINNET_FLOW_PRIVATE_KEY: ${{ secrets.MAINNET_FLOW_PRIVATE_KEY }}
+      TESTNET_FLOW_PRIVATE_KEY: ${{ secrets.TESTNET_FLOW_PRIVATE_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Get changed folders
+        id: changed-files
+        uses: jitterbit/get-changed-files@v1
+        with:
+          format: 'json'
+
+      - name: Filter and validate changes
+        id: validate
+        run: |
+          # Extract and filter changed folders from the registry directory
+          CHANGED_FOLDERS=$(bun -e "
+            const changedFiles = JSON.parse(process.env.CHANGED_FILES);
+            const registryFiles = changedFiles.filter(file => file.startsWith('tokens/registry/'));
+            const folders = new Set(registryFiles.map(file => file.split('/')[2]));
+            const filteredFolders = Array.from(folders).filter(folder => 
+              process.env.NETWORK === 'testnet' ? 
+                folder.startsWith('testnet:') : 
+                !folder.startsWith('testnet:')
+            );
+            console.log(filteredFolders.join(' '));
+          ")
+
+          if [ -z "$CHANGED_FOLDERS" ]; then
+            echo "No ${{ matrix.network }} changes to validate"
+            echo "skip_comment=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Run validation script and capture output
+          VALIDATION_OUTPUT=$(bun run tokens/src/validate-registry.ts $CHANGED_FOLDERS)
+          VALIDATION_EXIT_CODE=$?
+
+          # Set the output for GitHub Actions
+          echo "comment<<EOF" >> $GITHUB_OUTPUT
+          echo "$VALIDATION_OUTPUT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+          # Exit with the validation script's exit code
+          exit $VALIDATION_EXIT_CODE
+        env:
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all }}
+
+      - name: Create or update comment
+        if: steps.validate.outputs.skip_comment != 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const comment = `${{ steps.validate.outputs.comment }}`;
+            const issueNumber = context.issue.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const network = process.env.NETWORK;
+
+            // Find existing comment from this action
+            const { data: comments } = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number: issueNumber,
+            });
+
+            const existingComment = comments.find(comment =>
+              comment.user.login === 'github-actions[bot]' &&
+              comment.body.includes(`## Registry Changes Validation Report (${network.charAt(0).toUpperCase() + network.slice(1)})`)
+            );
+
+            if (existingComment) {
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: existingComment.id,
+                body: comment,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: issueNumber,
+                body: comment,
+              });
+            }

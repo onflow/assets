@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "module": "src/index.ts",
+  "scripts": {
+    "validate-registry": "bun run src/validate-registry.ts"
+  },
   "dependencies": {
     "@onflow/fcl": "^1.15.0",
     "elliptic": "^6.6.1",

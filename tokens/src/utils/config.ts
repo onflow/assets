@@ -9,7 +9,7 @@ export const networks = ["mainnet", "testnet"] as const;
 
 export type Network = (typeof networks)[number];
 
-export const networkName = process.env.NETWORK || "testnet";
+export const networkName: Network = (process.env.NETWORK as Network) || "testnet";
 
 export const endpoints: Record<Network, string> = {
     mainnet: "https://token-list.fixes.world/api",

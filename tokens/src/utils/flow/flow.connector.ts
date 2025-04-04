@@ -1,9 +1,8 @@
 import * as fcl from "@onflow/fcl";
 import type { ArgsFn } from "@onflow/fcl-core/types/exec/args";
 import type { Account, TransactionStatus } from "@onflow/typedefs";
+import type { Network } from "../config";
 import type { Authz, IFlowScriptExecutor } from "../types";
-
-export type NetworkType = "mainnet" | "testnet" | "emulator";
 
 let isGloballyInited = false;
 let globallyPromise: Promise<void> | null = null;
@@ -14,7 +13,7 @@ export class FlowConnector implements IFlowScriptExecutor {
      */
     constructor(
         private readonly flowJSON: object,
-        public readonly network: NetworkType = "mainnet",
+        public readonly network: Network,
         private readonly defaultRpcEndpoint: string | undefined = undefined,
     ) {}
 
@@ -27,8 +26,6 @@ export class FlowConnector implements IFlowScriptExecutor {
                 return this.defaultRpcEndpoint ?? "https://mainnet.onflow.org";
             case "testnet":
                 return this.defaultRpcEndpoint ?? "https://testnet.onflow.org";
-            case "emulator":
-                return "http://localhost:8888";
             default:
                 throw new Error(`Network type ${this.network} is not supported`);
         }
