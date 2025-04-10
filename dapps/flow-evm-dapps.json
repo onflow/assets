@@ -15,7 +15,10 @@
 		"name": "PumpFlow",
 		"website": "https://www.pumpflow.meme/",
 		"chain_id": 747,
-		"contract_addresses": [],
+		"contract_addresses": [
+			"0x576Be17F4dFa0E4964034e2E3dD29465B225B8d4",
+			"0xfD734fA1970f2750a4E54E4f12c54e670FdA80BA"
+		],
 		"description": "Launch Meme Tokens in seconds on Flow Blockchain.",
 		"logoURI": ""
 	},
@@ -31,15 +34,19 @@
 		"name": "ankr",
 		"website": "https://www.ankr.com/staking/stake/flow",
 		"chain_id": 747,
-		"contract_addresses": [],
-		"description": "",
+		"contract_addresses": [
+			"0xFE8189A3016cb6A3668b8ccdAC520CE572D4287a",
+			"0xd6Fd021662B83bb1aAbC2006583A62Ad2Efb8d4A",
+			"0x1b97100eA1D7126C4d60027e231EA4CB25314bdb"
+		],
+		"description": "Ankr is a decentralized infrastructure provider offering RPC services and liquid staking solutions.",
 		"logoURI": ""
 	},
 	{
 		"name": "StableKitty",
 		"website": "https://stable.kittypunch.xyz/",
 		"chain_id": 747,
-		"contract_addresses": [],
+		"contract_addresses": ["0x4412140D52C1F5834469a061927811Abb6026dB7"],
 		"description": "",
 		"logoURI": ""
 	},
@@ -47,16 +54,27 @@
 		"name": "KittyPunch",
 		"website": "https://app.kittypunch.xyz/",
 		"chain_id": 747,
-		"contract_addresses": [],
+		"contract_addresses": [
+			"0x4412140D52C1F5834469a061927811Abb6026dB7",
+			"0xf0E48dC92f66E246244dd9F33b02f57b0E69fBa9",
+			"0xebd098c60b1089f362AC9cfAd9134CBD29408226",
+			"0x87048a97526c4B66b71004927D24F61DEFcD6375",
+			"0xf45AFe28fd5519d5f8C1d4787a4D5f724C0eFa4d",
+			"0x29372c22459a4e373851798bFd6808e71EA34A71",
+			"0x6D0e081Acc28eA9ee6b7fD293eC03F97147b026d"
+		],
 		"description": "",
 		"logoURI": ""
 	},
 	{
 		"name": "aiSports",
-		"website": "https://www.aisportspro.com/",
+		"website": "https://www.aisportspro.com/home",
 		"chain_id": 747,
-		"contract_addresses": [],
-		"description": "The Premier Fantasy Sports Platform on the Flow Blockchain.",
+		"contract_addresses": [
+			"0x3A33C904C132822Ce01948CE318C15988727D1dB",
+			"0x1899cB99846f7C9891eCDd785474A5D9C2889dA6"
+		],
+		"description": "Play Daily Fantasy, win $JUICE and collect aiSports NFTs",
 		"logoURI": ""
 	},
 	{
