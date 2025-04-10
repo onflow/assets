@@ -102,7 +102,7 @@
 		"chain_id": 747,
 		"contract_addresses": ["0x84c6a2e6765e88427c41bb38c82a78b570e24709"],
 		"description": "Collect and own officially licensed NBA digital collectibles.",
-		"logoURI": "",
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/nbatopshot/png/logo.png",
 		"category": "Collectibles"
 	},
 	{
@@ -123,7 +123,7 @@
 		"chain_id": 747,
 		"contract_addresses": ["0x0000000000000068F116a894984e2DB1123eB395"],
 		"description": "The largest NFT marketplace. Buy, sell, & discover the internet of goods.",
-		"logoURI": "",
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/opensea/svg/logo.svg",
 		"category": "Marketplaces"
 	}
 ]
