@@ -1,4 +1,4 @@
-name: Ensure Tokens Registered
+name: Ensure TokenList Up-to-date
 
 on:
   push:
@@ -62,6 +62,7 @@ jobs:
 
     permissions:
       contents: write
+      pull-requests: write
     
     steps:
       - name: Checkout repository
