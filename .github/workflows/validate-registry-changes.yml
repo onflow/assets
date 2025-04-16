@@ -141,8 +141,37 @@ jobs:
           if-no-files-found: ignore
 
       - name: Run token status check
+        id: check-tokens
         run: |
-          bun run tokens/src/1-check-dirs-and-update-tokens-status.ts
+          # Get the original output
+          ORIGINAL_OUTPUT=$(bun run tokens/src/1-check-dirs-and-update-tokens-status.ts)
+
+          # Get valid addresses from validated-folders.json
+          VALID_ADDRESSES=$(bun -e "
+            try {
+              const fs = require('fs');
+              const validatedFolders = JSON.parse(fs.readFileSync('validated-folders.json', 'utf8'));
+              const validResults = validatedFolders.filter(result => result.isValid);
+              const validAddresses = validResults.map(result => result.folder);
+              console.log(validAddresses.join('\\n'));
+            } catch (e) {
+              console.error('Error processing validated-folders.json:', e);
+              process.exit(1);
+            }
+          ")
+
+          # Filter the original output to only include lines with valid addresses
+          FILTERED_OUTPUT=$(echo "$ORIGINAL_OUTPUT" | grep -E "$(echo "$VALID_ADDRESSES" | tr '\n' '|' | sed 's/|$//')" || true)
+
+          # Count the number of valid addresses found in the output
+          VALID_COUNT=$(echo "$FILTERED_OUTPUT" | grep -c "✅" || true)
+
+          # Generate final output
+          CHECK_OUTPUT="## Token Status Check Results (${VALID_COUNT} valid addresses)\n\n${FILTERED_OUTPUT}"
+
+          echo "check_output<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHECK_OUTPUT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Upload shortlisted contracts
         uses: actions/upload-artifact@v4
@@ -157,6 +186,6 @@ jobs:
         with:
           script: |
             const script = require('./.github/scripts/upsert-comment.js')
-            const comment = `${{ steps.validate.outputs.comment }}`
+            const comment = `${{ steps.validate.outputs.comment }}\n\n${{ steps.check-tokens.outputs.check_output }}`
             const commentIdentifier = '## Registry Changes Validation Report'
             await script({github, context, core, comment, commentIdentifier})
