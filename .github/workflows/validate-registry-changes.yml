@@ -48,9 +48,11 @@ jobs:
               pull_number: context.issue.number,
             });
             const changedFiles = files.map(file => file.filename);
-            core.setOutput('all', JSON.stringify(changedFiles));
+            core.setOutput('all', JSON.stringify(changedFiles, null, 0));
 
       - name: Security checks
+        env:
+          CHANGED_FILES_JSON: ${{ steps.changed-files.outputs.all }}
         run: |
           # Check if PR is from a fork
           if [ "${{ github.event.pull_request.head.repo.full_name }}" != "${{ github.repository }}" ]; then
@@ -58,15 +60,18 @@ jobs:
           fi
 
           # Check if validate-registry.ts has been modified
-          CHANGED_FILES=$(bun -e "
-            const changedFiles = JSON.parse('${{ steps.changed-files.outputs.all }}');
-            const hasModifiedValidationScript = changedFiles.some(file => 
-              file === 'tokens/src/validate-registry.ts'
-            );
-            console.log(hasModifiedValidationScript);
+          HAS_MODIFIED_SCRIPT=$(bun -e "
+            try {
+              const changedFiles = JSON.parse(process.env.CHANGED_FILES_JSON);
+              const hasModified = changedFiles.some(file => file === 'tokens/src/validate-registry.ts');
+              console.log(hasModified);
+            } catch (e) {
+              console.error('Error parsing JSON:', e);
+              process.exit(1);
+            }
           ")
 
-          if [ "$CHANGED_FILES" = "true" ]; then
+          if [ "$HAS_MODIFIED_SCRIPT" = "true" ]; then
             echo "Error: The validation script (tokens/src/validate-registry.ts) has been modified."
             echo "This is not allowed for security reasons."
             exit 1
@@ -74,11 +79,14 @@ jobs:
 
           # Check if all changed files are in the registry directory
           INVALID_FILES=$(bun -e "
-            const changedFiles = JSON.parse('${{ steps.changed-files.outputs.all }}');
-            const invalidFiles = changedFiles.filter(file => 
-              !file.startsWith('tokens/registry/')
-            );
-            console.log(invalidFiles.join('\\n'));
+            try {
+              const changedFiles = JSON.parse(process.env.CHANGED_FILES_JSON);
+              const invalidFiles = changedFiles.filter(file => !file.startsWith('tokens/registry/'));
+              console.log(invalidFiles.join('\\n'));
+            } catch (e) {
+              console.error('Error parsing JSON:', e);
+              process.exit(1);
+            }
           ")
 
           if [ -n "$INVALID_FILES" ]; then
