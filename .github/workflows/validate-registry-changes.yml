@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      pull-requests: write
       contents: read
+      pull-requests: write
       issues: write
 
     env:
@@ -39,9 +39,16 @@ jobs:
 
       - name: Get changed folders
         id: changed-files
-        uses: jitterbit/get-changed-files@v1
+        uses: actions/github-script@v7
         with:
-          format: 'json'
+          script: |
+            const { data: files } = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+            });
+            const changedFiles = files.map(file => file.filename);
+            core.setOutput('all', JSON.stringify(changedFiles));
 
       - name: Security checks
         run: |
@@ -119,7 +126,6 @@ jobs:
           exit $VALIDATION_EXIT_CODE
 
       - name: Upload validation results
-        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: validated-folders-${{ matrix.network }}
