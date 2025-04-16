@@ -1,6 +1,6 @@
 import type { ArgsFn } from "@onflow/fcl-core/types/exec/args";
 import type { Account } from "@onflow/typedefs";
-import type { FlowWallet } from "./flow";
+import type { FlowConnector, FlowWallet } from "./flow";
 
 export type Authz = (account: Account) => Promise<object> | object;
 
@@ -31,7 +31,8 @@ export interface IFlowSigner {
 export interface Context extends Record<string, unknown> {}
 
 export interface FlowBlockchainContext extends Context {
-    wallet: FlowWallet;
+    connector: FlowConnector;
+    wallet?: FlowWallet;
 }
 
 interface URLDef {

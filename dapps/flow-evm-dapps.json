@@ -15,9 +15,13 @@
 		"name": "PumpFlow",
 		"website": "https://www.pumpflow.meme/",
 		"chain_id": 747,
-		"contract_addresses": [],
+		"contract_addresses": [
+			"0x576Be17F4dFa0E4964034e2E3dD29465B225B8d4",
+			"0xfD734fA1970f2750a4E54E4f12c54e670FdA80BA"
+		],
 		"description": "Launch Meme Tokens in seconds on Flow Blockchain.",
-		"logoURI": ""
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/pumpflow/png/logo.png",
+		"category": "DeFi"
 	},
 	{
 		"name": "MORE Markets",
@@ -25,70 +29,101 @@
 		"chain_id": 747,
 		"contract_addresses": [],
 		"description": "Connecting the world to proven strategies in trading, yield farming, and everything in between through automated vaults.",
-		"logoURI": ""
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/moremarkets/svg/logo.svg",
+		"category": "DeFi"
 	},
 	{
 		"name": "ankr",
 		"website": "https://www.ankr.com/staking/stake/flow",
 		"chain_id": 747,
-		"contract_addresses": [],
-		"description": "",
-		"logoURI": ""
+		"contract_addresses": [
+			"0xFE8189A3016cb6A3668b8ccdAC520CE572D4287a",
+			"0xd6Fd021662B83bb1aAbC2006583A62Ad2Efb8d4A",
+			"0x1b97100eA1D7126C4d60027e231EA4CB25314bdb"
+		],
+		"description": "Ankr is a decentralized infrastructure provider offering RPC services and liquid staking solutions.",
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/e1a66262aab5e19701177b2b1579dca1d34381bb/dapps/ankr/svg/logo.svg",
+		"category": "DeFi"
 	},
 	{
 		"name": "StableKitty",
 		"website": "https://stable.kittypunch.xyz/",
 		"chain_id": 747,
-		"contract_addresses": [],
-		"description": "",
-		"logoURI": ""
+		"contract_addresses": ["0x4412140D52C1F5834469a061927811Abb6026dB7"],
+		"description": "StableKitty offers lightning-fast trades with minimal slippage and maximum efficiency. Earn rewards by providing liquidity to our innovative pools.",
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/stablekitty/png/logo.png",
+		"category": "DeFi"
 	},
 	{
 		"name": "KittyPunch",
 		"website": "https://app.kittypunch.xyz/",
 		"chain_id": 747,
-		"contract_addresses": [],
-		"description": "",
-		"logoURI": ""
+		"contract_addresses": [
+			"0x4412140D52C1F5834469a061927811Abb6026dB7",
+			"0xf0E48dC92f66E246244dd9F33b02f57b0E69fBa9",
+			"0xebd098c60b1089f362AC9cfAd9134CBD29408226",
+			"0x87048a97526c4B66b71004927D24F61DEFcD6375",
+			"0xf45AFe28fd5519d5f8C1d4787a4D5f724C0eFa4d",
+			"0x29372c22459a4e373851798bFd6808e71EA34A71",
+			"0x6D0e081Acc28eA9ee6b7fD293eC03F97147b026d"
+		],
+		"description": "KittyPunch is a DeFi project built for consumer blockchains. Trade digital assets, earn yield, and even collect your own Kitties with KittyPunch.",
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/kittypunch/png/logo.png",
+		"category": "DeFi"
 	},
 	{
 		"name": "aiSports",
-		"website": "https://www.aisportspro.com/",
+		"website": "https://www.aisportspro.com/home",
 		"chain_id": 747,
-		"contract_addresses": [],
-		"description": "The Premier Fantasy Sports Platform on the Flow Blockchain.",
-		"logoURI": ""
+		"contract_addresses": [
+			"0x3A33C904C132822Ce01948CE318C15988727D1dB",
+			"0x1899cB99846f7C9891eCDd785474A5D9C2889dA6"
+		],
+		"description": "Play Daily Fantasy, win $JUICE and collect aiSports NFTs",
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/aisports/svg/logo.svg",
+		"category": "Social & Games"
 	},
 	{
 		"name": "Beezie",
 		"website": "https://beezie.io/claw",
 		"chain_id": 747,
-		"contract_addresses": [],
-		"description": "",
-		"logoURI": ""
+		"contract_addresses": [
+			"0x0F3074bA5333A7935FEb054A7a8649547eec992F",
+			"0x3f1C8F61B9d98737b492fc217281846e5e07618f",
+			"0xD112634f06902a977db1D596c77715D72f8DA8a9"
+		],
+		"description": "Beezie brings physical collectibles on-chain. Trade grails in our marketplace or pull heat in The Claw. Keep your collection onchain or have it shipped to your doorstep anytime.",
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/beezie/svg/logo.svg",
+		"category": "Collectibles"
 	},
 	{
 		"name": "NBA Top Shot",
 		"website": "https://nbatopshot.com/",
 		"chain_id": 747,
-		"contract_addresses": [],
-		"description": "",
-		"logoURI": ""
+		"contract_addresses": ["0x84c6a2e6765e88427c41bb38c82a78b570e24709"],
+		"description": "Collect and own officially licensed NBA digital collectibles.",
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/nbatopshot/png/logo.png",
+		"category": "Collectibles"
 	},
 	{
 		"name": "Mintify",
 		"website": "https://flow.mintify.xyz/",
 		"chain_id": 747,
-		"contract_addresses": [],
-		"description": "",
-		"logoURI": ""
+		"contract_addresses": [
+			"0x00000003cf2c206e1fdA7fd032b2f9bdE12Ec6Cc",
+			"0x0000000000000068F116a894984e2DB1123eB395"
+		],
+		"description": "Mintify is the best consumer experience to trade every asset and every market with any currency directly onchain. Mintify is part of a next generation of platforms that support real-time, direct onchain trading of your favorite economies. We are positioned to be the backbone of the largest opportunity zone of the 21st century: Digital Asset Markets, Decentralized Networks And Consumer Applications.",
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/mintify/svg/logo.svg",
+		"category": "Collectibles"
 	},
 	{
 		"name": "OpenSea",
 		"website": "https://opensea.io/discover/chain/flow",
 		"chain_id": 747,
-		"contract_addresses": [],
-		"description": "",
-		"logoURI": ""
+		"contract_addresses": ["0x0000000000000068F116a894984e2DB1123eB395"],
+		"description": "The largest NFT marketplace. Buy, sell, & discover the internet of goods.",
+		"logoURI": "https://raw.githubusercontent.com/onflow/assets/refs/heads/main/dapps/opensea/svg/logo.svg",
+		"category": "Marketplaces"
 	}
 ]

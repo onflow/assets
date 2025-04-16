@@ -20,8 +20,12 @@ export function logTimeWrapper(fn: (...args: unknown[]) => Promise<unknown>) {
 export async function buildBlockchainContext(
     network: Network = networkName,
 ): Promise<FlowBlockchainContext> {
-    const connecter = new FlowConnector(flowJSON, network);
-    const wallet = new FlowWallet(connecter);
-
-    return { wallet };
+    const connector = new FlowConnector(flowJSON, network);
+    let wallet: FlowWallet | undefined = undefined;
+    try {
+        wallet = new FlowWallet(connector);
+    } catch (_e) {
+        // No need to log error here, it's probably because the wallet is not set
+    }
+    return { connector, wallet };
 }

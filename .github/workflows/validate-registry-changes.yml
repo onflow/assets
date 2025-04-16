@@ -5,12 +5,6 @@ on:
     paths:
       - 'tokens/registry/**'
 
-env:
-  MAINNET_FLOW_ADDRESS: ${{ vars.MAINNET_FLOW_ADDRESS }}
-  TESTNET_FLOW_ADDRESS: ${{ vars.TESTNET_FLOW_ADDRESS }}
-  MAINNET_FLOW_PRIVATE_KEY: ${{ secrets.MAINNET_FLOW_PRIVATE_KEY }}
-  TESTNET_FLOW_PRIVATE_KEY: ${{ secrets.TESTNET_FLOW_PRIVATE_KEY }}
-
 jobs:
   validate:
     strategy:
@@ -25,8 +19,6 @@ jobs:
 
     env:
       NETWORK: ${{ matrix.network }}
-      FLOW_ADDRESS: ${{ matrix.network == 'mainnet' && vars.MAINNET_FLOW_ADDRESS || vars.TESTNET_FLOW_ADDRESS }}
-      FLOW_PRIVATE_KEY: ${{ matrix.network == 'mainnet' && secrets.MAINNET_FLOW_PRIVATE_KEY || secrets.TESTNET_FLOW_PRIVATE_KEY }}
 
     steps:
       - name: Checkout repository
@@ -49,13 +41,6 @@ jobs:
         uses: jitterbit/get-changed-files@v1
         with:
           format: 'json'
-
-      - name: Debug environment variables
-        run: |
-            echo "Network: $NETWORK"
-            echo "Flow Address: $FLOW_ADDRESS"
-            echo "Mainnet Flow Address: $MAINNET_FLOW_ADDRESS"
-            echo "Testnet Flow Address: $TESTNET_FLOW_ADDRESS"
 
       - name: Filter and validate changes
         id: validate
@@ -94,6 +79,14 @@ jobs:
 
           # Exit with the validation script's exit code
           exit $VALIDATION_EXIT_CODE
+
+      - name: Upload validation results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validated-folders-${{ matrix.network }}
+          path: validated-folders.json
+          if-no-files-found: ignore
 
       - name: Create or update comment
         if: steps.validate.outputs.skip_comment != 'true'
