@@ -42,11 +42,11 @@ jobs:
           bun install
 
       - name: Download shortlisted contracts artifact
-        uses: dawidd6/action-download-artifact@v3
+        uses: dawidd6/action-download-artifact@v9
         with:
           workflow: validate-registry-changes.yml
           name: shortlisted-contracts-${{ matrix.network }}
-          path: tokens/outputs/${{ matrix.network }}/shortlisted-contracts.json
+          path: tokens/outputs/${{ matrix.network }}
 
       - name: Ensure tokens registered
         run: |
@@ -76,18 +76,18 @@ jobs:
           bun install
       
       - name: Download shortlisted contracts artifact - mainnet
-        uses: dawidd6/action-download-artifact@v3
+        uses: dawidd6/action-download-artifact@v9
         with:
           workflow: validate-registry-changes.yml
           name: shortlisted-contracts-mainnet
-          path: tokens/outputs/mainnet/shortlisted-contracts.json
-        
+          path: tokens/outputs/mainnet
+
       - name: Download shortlisted contracts artifact - testnet
-        uses: dawidd6/action-download-artifact@v3
+        uses: dawidd6/action-download-artifact@v9
         with:
           workflow: validate-registry-changes.yml
           name: shortlisted-contracts-testnet
-          path: tokens/outputs/testnet/shortlisted-contracts.json
+          path: tokens/outputs/testnet
 
       - name: Sync token list
         run: |
