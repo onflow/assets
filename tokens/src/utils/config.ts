@@ -17,9 +17,9 @@ export const endpoints: Record<Network, string> = {
 };
 
 // File paths
-export const ROOT_DIR = join(__dirname, "..", "..");
-export const OUTPUTS_DIR = join(ROOT_DIR, "outputs");
-export const REGISTRY_DIR = join(ROOT_DIR, "registry");
+export const ROOT_DIR = join(__dirname, "..", "..", "..");
+export const OUTPUTS_DIR = join(ROOT_DIR, "tokens/outputs");
+export const REGISTRY_DIR = join(ROOT_DIR, "tokens/registry");
 
 export const getNetworkOutputPath = (network: Network) => join(OUTPUTS_DIR, network);
 export const getShortlistedContractsPath = (network: Network) =>

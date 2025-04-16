@@ -14,7 +14,7 @@
       },
       "evmAddress": "0xd3bf53dac106a0290b0483ecbc89d40fcc961f3e",
       "flowAddress": "0x7e60df042a9c0868",
-      "symbol": "FLOW",
+      "symbol": "WFLOW",
       "name": "Flow",
       "description": "",
       "decimals": 18,
@@ -28,38 +28,6 @@
         "documentation": "https://developers.flow.com/build/core-contracts/flow-token",
         "github": "https://github.com/onflow/flow-core-contracts",
         "discord": "https://discord.com/invite/J6fFnh2xx6",
-        "website": "https://flow.com",
-        "displaySource": "0xa51d7fe9e0080662",
-        "pathSource": "0xa51d7fe9e0080662"
-      },
-      "flowIdentifier": "A.7e60df042a9c0868.FlowToken.Vault",
-      "website": "https://evm.flowscan.io/token/0xd3bf53dac106a0290b0483ecbc89d40fcc961f3e"
-    },
-    {
-      "chainId": 545,
-      "address": "0xd3bf53dac106a0290b0483ecbc89d40fcc961f3e",
-      "contractName": "FlowToken",
-      "path": {
-        "vault": "/storage/flowTokenVault",
-        "receiver": "/public/flowTokenReceiver",
-        "balance": "/public/flowTokenBalance"
-      },
-      "evmAddress": "0xd3bf53dac106a0290b0483ecbc89d40fcc961f3e",
-      "flowAddress": "0x7e60df042a9c0868",
-      "symbol": "FLOW",
-      "name": "Flow",
-      "description": "",
-      "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/testnet:0xd3bf53dac106a0290b0483ecbc89d40fcc961f3e/logo.svg",
-      "tags": [
-        "utility-token"
-      ],
-      "extensions": {
-        "discord": "https://discord.com/invite/J6fFnh2xx6",
-        "twitter": "https://twitter.com/flow_blockchain",
-        "coingeckoId": "flow",
-        "github": "https://github.com/onflow/flow-core-contracts",
-        "documentation": "https://developers.flow.com/build/core-contracts/flow-token",
         "website": "https://flow.com",
         "displaySource": "0xa51d7fe9e0080662",
         "pathSource": "0xa51d7fe9e0080662"
@@ -68,9 +36,9 @@
       "website": "https://evm.flowscan.io/token/0xd3bf53dac106a0290b0483ecbc89d40fcc961f3e"
     }
   ],
-  "totalAmount": 11,
+  "totalAmount": 1,
   "filterType": "ALL",
-  "timestamp": "2025-04-04T12:13:07.732Z",
+  "timestamp": "2025-04-16T14:29:03.906Z",
   "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.svg",
   "keywords": [
     "Flow",
@@ -112,6 +80,6 @@
   "version": {
     "major": 1,
     "minor": 0,
-    "patch": 1
+    "patch": 2
   }
 }

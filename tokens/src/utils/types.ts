@@ -96,9 +96,18 @@ export interface Token extends CustomizableTokenFields {
 
 export interface TokenList {
     tokens: Token[];
+    totalAmount: number;
     version: {
         major: number;
         minor: number;
         patch: number;
     };
+}
+
+export interface ValidationResult {
+    isValid: boolean;
+    errors: string[];
+    folder: string;
+    isTestnet: boolean;
+    isBridged?: boolean;
 }
