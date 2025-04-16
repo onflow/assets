@@ -1,7 +1,7 @@
 name: Validate Registry Changes
 
 on:
-  pull_request:
+  pull_request_target:
     paths:
       - 'tokens/registry/**'
 
@@ -25,7 +25,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -43,9 +43,46 @@ jobs:
         with:
           format: 'json'
 
+      - name: Security checks
+        run: |
+          # Check if PR is from a fork
+          if [ "${{ github.event.pull_request.head.repo.full_name }}" != "${{ github.repository }}" ]; then
+            echo "PR is from a fork: ${{ github.event.pull_request.head.repo.full_name }}"
+          fi
+
+          # Check if validate-registry.ts has been modified
+          CHANGED_FILES=$(bun -e "
+            const changedFiles = JSON.parse('${{ steps.changed-files.outputs.all }}');
+            const hasModifiedValidationScript = changedFiles.some(file => 
+              file === 'tokens/src/validate-registry.ts'
+            );
+            console.log(hasModifiedValidationScript);
+          ")
+
+          if [ "$CHANGED_FILES" = "true" ]; then
+            echo "Error: The validation script (tokens/src/validate-registry.ts) has been modified."
+            echo "This is not allowed for security reasons."
+            exit 1
+          fi
+
+          # Check if all changed files are in the registry directory
+          INVALID_FILES=$(bun -e "
+            const changedFiles = JSON.parse('${{ steps.changed-files.outputs.all }}');
+            const invalidFiles = changedFiles.filter(file => 
+              !file.startsWith('tokens/registry/')
+            );
+            console.log(invalidFiles.join('\\n'));
+          ")
+
+          if [ -n "$INVALID_FILES" ]; then
+            echo "Error: Found changes outside the registry directory:"
+            echo "$INVALID_FILES"
+            echo "Only changes in tokens/registry/ are allowed."
+            exit 1
+          fi
+
       - name: Filter and validate changes
         id: validate
-
         env:
           CHANGED_FILES: ${{ steps.changed-files.outputs.all }}
 
