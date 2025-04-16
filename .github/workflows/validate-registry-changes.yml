@@ -169,7 +169,7 @@ jobs:
           VALID_COUNT=$(echo "$FILTERED_OUTPUT" | grep -c "✅" || true)
 
           # Generate final output
-          CHECK_OUTPUT="## Token Status Check Report (${VALID_COUNT} valid) - ${process.env.NETWORK}\n\n${FILTERED_OUTPUT}"
+          CHECK_OUTPUT="## Token Status Check Report (${VALID_COUNT} valid) - ${NETWORK}\n\n${FILTERED_OUTPUT}"
 
           echo "check_output<<EOF" >> $GITHUB_OUTPUT
           echo "$CHECK_OUTPUT" >> $GITHUB_OUTPUT
@@ -189,5 +189,5 @@ jobs:
           script: |
             const script = require('./.github/scripts/upsert-comment.js')
             const comment = `${{ steps.validate.outputs.comment }}\n\n${{ steps.check-tokens.outputs.check_output }}`
-            const commentIdentifier = '## Registry Changes Validation Report - ${process.env.NETWORK}'
+            const commentIdentifier = `## Registry Changes Validation Report - ${process.env.NETWORK}`
             await script({github, context, core, comment, commentIdentifier})
