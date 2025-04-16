@@ -129,7 +129,7 @@
       "name": "Ankr Staked FLOW EVM",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of 1b97100ea1d7126c4d60027e231ea4cb25314bdb",
       "decimals": 18,
-      "logoURI": "https://www.ankr.com/staking/assets/flow.8fd052f2.png",
+      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x1b97100eA1D7126C4d60027e231EA4CB25314bdb/logo.png",
       "tags": [],
       "extensions": {
         "coingeckoId": "ankr-staked-flow",
@@ -255,7 +255,7 @@
   ],
   "totalAmount": 9,
   "filterType": "ALL",
-  "timestamp": "2025-04-16T14:29:02.602Z",
+  "timestamp": "2025-04-16T17:39:05.545Z",
   "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.svg",
   "keywords": [
     "Flow",
@@ -297,6 +297,6 @@
   "version": {
     "major": 1,
     "minor": 2,
-    "patch": 2
+    "patch": 3
   }
 }
