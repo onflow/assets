@@ -12,6 +12,6 @@
       "address": "0x7e60df042a9c0868",
       "contractName": "FlowToken"
     },
-    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/shortlist/testnet:0xd3bf53dac106a0290b0483ecbc89d40fcc961f3e/logo.svg"
+    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/testnet:0xd3bf53dac106a0290b0483ecbc89d40fcc961f3e/logo.svg"
   }
 ]
