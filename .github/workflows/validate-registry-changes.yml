@@ -155,15 +155,12 @@ jobs:
         if: steps.validate.outputs.skip_comment != 'true'
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const script = require('${{ github.workspace }}/.github/scripts/upsert-comment.js');
-            const network = process.env.NETWORK;
-            const commentIdentifier = `## Registry Changes Validation Report (${network === 'mainnet' ? 'Mainnet' : 'Testnet'})`;
+            const script = require("./.github/scripts/upsert-comment.js");
             await script({
               github,
               context,
               core,
-              comment: '${{ steps.validate.outputs.comment }}',
-              commentIdentifier
+              comment: "${{ steps.validate.outputs.comment }}",
+              commentIdentifier: "## Registry Changes Validation Report"
             });
