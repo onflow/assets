@@ -80,6 +80,14 @@ jobs:
           # Exit with the validation script's exit code
           exit $VALIDATION_EXIT_CODE
 
+      - name: Upload validation results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validated-folders-${{ matrix.network }}
+          path: validated-folders.json
+          if-no-files-found: ignore
+
       - name: Create or update comment
         if: steps.validate.outputs.skip_comment != 'true'
         uses: actions/github-script@v7
