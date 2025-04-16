@@ -156,11 +156,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const script = require("./.github/scripts/upsert-comment.js");
-            await script({
-              github,
-              context,
-              core,
-              comment: "${{ steps.validate.outputs.comment }}",
-              commentIdentifier: "## Registry Changes Validation Report"
-            });
+            const script = require('./.github/scripts/upsert-comment.js')
+            const comment = `${{ steps.validate.outputs.comment }}`
+            const commentIdentifier = '## Registry Changes Validation Report'
+            await script({github, context, core, comment, commentIdentifier})
