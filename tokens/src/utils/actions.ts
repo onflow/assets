@@ -3,15 +3,15 @@ import trxMaintainerUpdateCustomDisplay from "../cadence/transactions/maintainer
 import trxRegisterEVMAsset from "../cadence/transactions/register-evm-asset.cdc?raw";
 
 import type { FlowWallet } from "./flow";
-import type { EVMAssetStatus } from "./types";
+import type { EVMAssetStatus, IFlowScriptExecutor } from "./types";
 
 // Scripts actions
 
 export async function getEVMAssets(
-    flowWallet: FlowWallet,
+    flowExecutor: IFlowScriptExecutor,
     evmContractAddress: string,
 ): Promise<EVMAssetStatus | null> {
-    const result = await flowWallet.executeScript(
+    const result = await flowExecutor.executeScript(
         scriptGetFtContractByEVM,
         (arg, t) => [arg(evmContractAddress.toLowerCase(), t.String)],
         null,
