@@ -27,7 +27,11 @@ async function waitForTransaction(connector: FlowConnector, txid: string) {
 }
 
 async function checkBalance(ctx: FlowBlockchainContext, requiredBalance: number) {
-    const balance = await ctx.wallet.connector.getAccount(ctx.wallet.address);
+    const walletAddress = ctx.wallet?.address;
+    if (!walletAddress) {
+        throw new Error("No wallet address found");
+    }
+    const balance = await ctx.connector.getAccount(walletAddress);
     console.log(`💰 Balance: ${balance.balance} FLOW`);
     if (balance.balance < requiredBalance) {
         console.error(
@@ -38,6 +42,9 @@ async function checkBalance(ctx: FlowBlockchainContext, requiredBalance: number)
 }
 
 async function registerToken(ctx: FlowBlockchainContext, address: string) {
+    if (!ctx.wallet) {
+        throw new Error("No wallet found");
+    }
     console.log(`\n📝 Registering ${address}...`);
     const txid = await registerEVMAsset(ctx.wallet, address);
     await waitForTransaction(ctx.wallet.connector, txid);
@@ -50,6 +57,9 @@ async function updateTokenLogo(
     cadenceContractName: string,
     logoUri: string,
 ) {
+    if (!ctx.wallet) {
+        throw new Error("No wallet found");
+    }
     console.log(`\n🖼️ Updating logo for ${cadenceAddress} to ${logoUri}...`);
     const txid = await updateCustomizedDisplay(
         ctx.wallet,

@@ -24,7 +24,10 @@ function validateFolderContents(folderPath: string): string[] {
     const files = readdirSync(folderPath);
 
     // Check for disallowed files
-    const disallowedFiles = files.filter((file) => !ALLOWED_FILES.includes(file));
+    // ignore .DS_Store
+    const disallowedFiles = files.filter(
+        (file) => !ALLOWED_FILES.includes(file) && file !== ".DS_Store",
+    );
     if (disallowedFiles.length > 0) {
         errors.push(`Contains disallowed files: ${disallowedFiles.join(", ")}`);
     }
@@ -43,7 +46,7 @@ async function validateEVMAsset(
     address: string,
 ): Promise<{ isValid: boolean; isBridged?: boolean }> {
     try {
-        const result = await getEVMAssets(ctx.wallet, address);
+        const result = await getEVMAssets(ctx.connector, address);
         if (result === null) {
             return { isValid: false };
         }

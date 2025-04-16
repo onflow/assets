@@ -46,7 +46,7 @@ async function checkDirectory(
     const evmAddress = dirName.startsWith("testnet:") ? dirName.slice(8) : dirName;
 
     // Query chain status with lowercase address
-    const evmAssetStatus = await getEVMAssets(ctx.wallet, evmAddress.toLowerCase());
+    const evmAssetStatus = await getEVMAssets(ctx.connector, evmAddress.toLowerCase());
 
     if (!evmAssetStatus) {
       console.log(`⚠️ ${evmAddress} - No chain status found`);
