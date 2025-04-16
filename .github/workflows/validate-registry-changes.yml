@@ -102,10 +102,10 @@ jobs:
             const network = process.env.NETWORK;
 
             // Find existing comment from this action
-            const { data: comments } = await github.rest.issues.listComments({
+            const { data: comments } = await github.rest.pulls.listReviewComments({
               owner,
               repo,
-              issue_number: issueNumber,
+              pull_number: issueNumber,
             });
 
             const existingComment = comments.find(comment =>
@@ -114,17 +114,18 @@ jobs:
             );
 
             if (existingComment) {
-              await github.rest.issues.updateComment({
+              await github.rest.pulls.updateReviewComment({
                 owner,
                 repo,
                 comment_id: existingComment.id,
                 body: comment,
               });
             } else {
-              await github.rest.issues.createComment({
+              await github.rest.pulls.createReview({
                 owner,
                 repo,
-                issue_number: issueNumber,
+                pull_number: issueNumber,
                 body: comment,
+                event: 'COMMENT'
               });
             }
