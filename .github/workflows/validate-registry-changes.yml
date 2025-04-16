@@ -169,7 +169,7 @@ jobs:
           VALID_COUNT=$(echo "$FILTERED_OUTPUT" | grep -c "✅" || true)
 
           # Generate final output
-          CHECK_OUTPUT="## Token Status Check Results (${VALID_COUNT} valid addresses)\n\n${FILTERED_OUTPUT}"
+          CHECK_OUTPUT="## Token Status Check Report (${VALID_COUNT} valid) - ${process.env.NETWORK}\n\n${FILTERED_OUTPUT}"
 
           echo "check_output<<EOF" >> $GITHUB_OUTPUT
           echo "$CHECK_OUTPUT" >> $GITHUB_OUTPUT
