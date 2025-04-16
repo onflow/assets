@@ -96,6 +96,7 @@ export interface Token extends CustomizableTokenFields {
 
 export interface TokenList {
     tokens: Token[];
+    totalAmount: number;
     version: {
         major: number;
         minor: number;

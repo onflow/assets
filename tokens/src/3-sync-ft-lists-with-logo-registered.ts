@@ -52,7 +52,7 @@ const loadModsFile = (network: Network, address: string): CustomizableTokenField
     const modsPath = getModsPath(network, address);
 
     try {
-        console.log(`📝 Loading mods for ${address} on ${network}`);
+        console.log(`📝 Loading mods for ${address} at ${modsPath}`);
         if (!fs.existsSync(modsPath)) {
             return undefined;
         }
@@ -155,9 +155,16 @@ async function main() {
         }
 
         // First filter tokens based on shortlisted addresses
-        const filteredTokens = tokenList.tokens.filter((token) =>
-            shortlistedAddresses.has(token.address.toLowerCase()),
-        );
+        const registeredAddresses = new Set();
+        const filteredTokens = tokenList.tokens.filter((token) => {
+            const address = token.address.toLowerCase();
+            const isShortlisted = shortlistedAddresses.has(address);
+            if (isShortlisted && !registeredAddresses.has(address)) {
+                registeredAddresses.add(address);
+                return true;
+            }
+            return false;
+        });
         console.log(`📊 Filtered to ${filteredTokens.length} tokens`);
 
         // Then apply mods to filtered tokens
@@ -177,6 +184,9 @@ async function main() {
         });
 
         tokenList.tokens = tokensWithMods;
+
+        // Update total amount
+        tokenList.totalAmount = tokensWithMods.length;
 
         // Write filtered token list
         await writeJSONFile(tokenList, network);
