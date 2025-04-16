@@ -1,17 +1,9 @@
 import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { buildBlockchainContext, getEVMAssets } from "../utils";
-import type { FlowBlockchainContext } from "../utils/types";
+import type { FlowBlockchainContext, ValidationResult } from "../utils/types";
 
 const ALLOWED_FILES = [".gitkeep", "logo.png", "logo.svg", "mods.json"];
-
-interface ValidationResult {
-    isValid: boolean;
-    errors: string[];
-    folder: string;
-    isTestnet: boolean;
-    isBridged?: boolean;
-}
 
 function isValidFolderName(folderName: string): boolean {
     // Check if it's a valid EVM address or testnet:address format

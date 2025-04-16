@@ -102,3 +102,11 @@ export interface TokenList {
         patch: number;
     };
 }
+
+export interface ValidationResult {
+    isValid: boolean;
+    errors: string[];
+    folder: string;
+    isTestnet: boolean;
+    isBridged?: boolean;
+}
