@@ -133,14 +133,6 @@ jobs:
           # Exit with the validation script's exit code
           exit $VALIDATION_EXIT_CODE
 
-      - name: Upload validation results
-        if: steps.validate.outputs.skip_comment != 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: validated-folders-${{ matrix.network }}
-          path: validated-folders.json
-          if-no-files-found: ignore
-
       - name: Run token status check
         if: steps.validate.outputs.skip_comment != 'true'
         id: check-tokens
@@ -174,13 +166,6 @@ jobs:
           echo "check_output<<EOF" >> $GITHUB_OUTPUT
           echo "$CHECK_OUTPUT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
-
-      - name: Upload shortlisted contracts
-        uses: actions/upload-artifact@v4
-        with:
-          name: shortlisted-contracts-${{ matrix.network }}
-          path: tokens/outputs/${{ matrix.network }}/shortlisted-contracts.json
-          if-no-files-found: error
 
       - name: Create or update comment
         if: steps.validate.outputs.skip_comment != 'true'
