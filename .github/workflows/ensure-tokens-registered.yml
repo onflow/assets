@@ -111,11 +111,15 @@ jobs:
             echo "Updates were made to the token list"
           fi
 
-      - name: Commit all updates
+      - name: Create or Update Pull Request
         if: steps.check_changes.outputs.changes == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: peter-evans/create-pull-request@v5
         with:
-          commit_message: "chore: new tokens updated"
-          branch: main
-          file_pattern: "tokens/outputs/*.*"
-          commit_author: "GitHub Action <actions@github.com>"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: new tokens updated"
+          title: "chore: update token list"
+          body: "Automated update of token list"
+          branch: "update-token-list"
+          base: main
+          delete-branch: false
+          labels: automated
