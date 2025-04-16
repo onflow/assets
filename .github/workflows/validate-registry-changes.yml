@@ -134,6 +134,7 @@ jobs:
           exit $VALIDATION_EXIT_CODE
 
       - name: Upload validation results
+        if: steps.validate.outputs.skip_comment != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: validated-folders-${{ matrix.network }}
@@ -141,6 +142,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Run token status check
+        if: steps.validate.outputs.skip_comment != 'true'
         id: check-tokens
         run: |
           # Get the original output
@@ -187,5 +189,5 @@ jobs:
           script: |
             const script = require('./.github/scripts/upsert-comment.js')
             const comment = `${{ steps.validate.outputs.comment }}\n\n${{ steps.check-tokens.outputs.check_output }}`
-            const commentIdentifier = '## Registry Changes Validation Report'
+            const commentIdentifier = '## Registry Changes Validation Report - ${process.env.NETWORK}'
             await script({github, context, core, comment, commentIdentifier})

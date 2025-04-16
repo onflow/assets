@@ -116,7 +116,7 @@ export function generateComment(results: ValidationResult[]): string {
     const validFolders = results.filter((r) => r.isValid);
     const invalidFolders = results.filter((r) => !r.isValid);
 
-    let comment = "## Registry Changes Validation Report\n\n";
+    let comment = `## Registry Changes Validation Report - ${process.env.NETWORK}\n\n`;
 
     if (validFolders.length > 0) {
         comment += "### ✅ Valid Changes\n\n";
