@@ -4,10 +4,10 @@ import type { Account, TransactionStatus } from "@onflow/typedefs";
 import type { Network } from "../config";
 import type { Authz, IFlowScriptExecutor } from "../types";
 
-let isGloballyInited = false;
-let globallyPromise: Promise<void> | null = null;
-
 export class FlowConnector implements IFlowScriptExecutor {
+    private isInited = false;
+    private locallyInitedPromise: Promise<void> | null = null;
+
     /**
      * Initialize the Flow SDK
      */
@@ -31,11 +31,15 @@ export class FlowConnector implements IFlowScriptExecutor {
         }
     }
 
+    get fcl() {
+        return fcl;
+    }
+
     /**
      * Initialize the Flow SDK
      */
     async onModuleInit() {
-        if (isGloballyInited) return;
+        if (this.isInited) return;
 
         const cfg = fcl.config();
         // Required
@@ -46,21 +50,24 @@ export class FlowConnector implements IFlowScriptExecutor {
         cfg.put("fcl.limit", 9999);
         // Set the RPC endpoint
         cfg.put("accessNode.api", this.rpcEndpoint);
-        // Load Flow JSON
-        await cfg.load({ flowJSON: this.flowJSON as Record<string, unknown> });
 
-        isGloballyInited = true;
+        await cfg.load(
+            { flowJSON: this.flowJSON as Record<string, unknown> },
+            { ignoreConflicts: true },
+        );
+
+        this.isInited = true;
     }
 
     /**
      * Ensure the Flow SDK is initialized
      */
     private async ensureInited() {
-        if (isGloballyInited) return;
-        if (!globallyPromise) {
-            globallyPromise = this.onModuleInit();
+        if (this.isInited) return;
+        if (!this.locallyInitedPromise) {
+            this.locallyInitedPromise = this.onModuleInit();
         }
-        return await globallyPromise;
+        return await this.locallyInitedPromise;
     }
 
     /**
