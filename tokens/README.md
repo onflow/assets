@@ -1,6 +1,6 @@
-# Token Assets
+# Flow TokenList and Assets Registry
 
-This directory contains logo assets and metadata modifications for tokens on the Flow blockchain.
+This directory contains standardized token-list JSON files, logo assets and metadata modifications for tokens on the Flow blockchain.
 
 ## How to add a new token
 
@@ -35,6 +35,11 @@ Note:
 2. The PNG should be 256x256 pixels with a transparent background
 3. Name files according to the convention above
 4. Ensure you have the rights to the logo before submitting
+
+Submit a PR to the [assets repository](https://github.com/onflow/assets) to add the token to the registry.  
+Once your PR is merged, the Github bot will automatically run scripts to register token on Flow blockchain, update token-list JSON file and submit a PR for the update.
+
+We will review and merge the PRs as soon as possible to ensure the token-list JSON file is up to date.
 
 ## How to use the token list
 
