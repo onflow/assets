@@ -20,6 +20,8 @@ jobs:
 
     env:
       NETWORK: ${{ matrix.network }}
+      MAINNET_FLOW_ADDRESS: ${{ vars.MAINNET_FLOW_ADDRESS }}
+      TESTNET_FLOW_ADDRESS: ${{ vars.TESTNET_FLOW_ADDRESS }}
 
     steps:
       - name: Checkout repository
