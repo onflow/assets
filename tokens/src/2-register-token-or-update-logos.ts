@@ -1,6 +1,6 @@
 import { existsSync } from "node:fs";
 import { buildBlockchainContext } from "./utils";
-import { registerEVMAsset, updateCustomizedDisplay } from "./utils/actions";
+import { getEVMAssets, registerEVMAsset, updateCustomizedDisplay } from "./utils/actions";
 import { type Network, getLogoUrl, getShortlistedContractsPath, networks } from "./utils/config";
 import type { FlowConnector } from "./utils/flow";
 import type { TokenStatus } from "./utils/types";
@@ -118,7 +118,17 @@ async function main() {
                 targetUri !== undefined &&
                 contract.onchainLogoUri?.toLowerCase() !== targetUri.toLowerCase()
             ) {
-                if (!contract.cadence) {
+                // Query chain status with lowercase address
+                const updatedEVMStatus = await getEVMAssets(
+                    ctx.connector,
+                    contract.address.toLowerCase(),
+                );
+                const cadenceAddress =
+                    updatedEVMStatus?.bridgedAddress ?? contract.cadence?.address;
+                const cadenceContractName =
+                    updatedEVMStatus?.bridgedContractName ?? contract.cadence?.contractName;
+
+                if (!cadenceAddress || !cadenceContractName) {
                     console.error(`❌ No cadence info found for ${contract.address}`);
                     continue;
                 }
@@ -132,12 +142,7 @@ async function main() {
                 }
                 console.log("✅ Logo URL is accessible\n");
 
-                await updateTokenLogo(
-                    ctx,
-                    contract.cadence.address,
-                    contract.cadence.contractName,
-                    targetUri,
-                );
+                await updateTokenLogo(ctx, cadenceAddress, cadenceContractName, targetUri);
             }
         } catch (error) {
             console.error(`❌ Failed to process ${contract.address}:`, error);
