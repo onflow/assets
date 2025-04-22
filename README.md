@@ -2,6 +2,10 @@
 
 This repository contains logo assets for the Flow blockchain ecosystem, including tokens, environments, and decentralized applications (dApps).
 
+## How to add a new token?
+
+Refer to [Token Assets Guide](tokens/README.md) for detailed instructions on adding a new token.
+
 ## Repository Structure
 
 ```text
@@ -31,10 +35,6 @@ assets/
     │       └── token-list.json
     └── src/                    # Source code of scripts
 ```
-
-## How to add a new token?
-
-Refer to [Token Assets Guide](tokens/README.md) for detailed instructions on adding a new token.
 
 ## File Naming Conventions
 
