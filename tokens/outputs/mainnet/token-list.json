@@ -65,7 +65,7 @@
       },
       "evmAddress": "0x7296ebca325e835eb6c1b690484cf6fb4c396d2c",
       "flowAddress": "0x1e4aa0b87d10b141",
-      "symbol": "NONE",
+      "symbol": "Bartholomeow",
       "name": "Bartholomeow",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of 7296ebca325e835eb6c1b690484cf6fb4c396d2c",
       "decimals": 18,
@@ -174,7 +174,7 @@
       },
       "evmAddress": "0x6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb",
       "flowAddress": "0x1e4aa0b87d10b141",
-      "symbol": "NONE",
+      "symbol": "HotCocoa",
       "name": "HotCocoa",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of 6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb",
       "decimals": 18,
@@ -198,7 +198,7 @@
       },
       "evmAddress": "0xf45cbe30bd953590c9917799142edb05be3f293f",
       "flowAddress": "0x1e4aa0b87d10b141",
-      "symbol": "NONE",
+      "symbol": "Gwendolion",
       "name": "Gwendolion",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of f45cbe30bd953590c9917799142edb05be3f293f",
       "decimals": 18,
@@ -280,7 +280,7 @@
       },
       "evmAddress": "0x10448481630fb6d20b597e5b3d7e42dcb1247c8a",
       "flowAddress": "0x1e4aa0b87d10b141",
-      "symbol": "NONE",
+      "symbol": "Pawderick",
       "name": "Pawderick",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of 10448481630fb6d20b597e5b3d7e42dcb1247c8a",
       "decimals": 18,
@@ -359,7 +359,7 @@
       },
       "evmAddress": "0x9b565507858812e8b5ffbfbde9b200a3bc2e8f76",
       "flowAddress": "0x1e4aa0b87d10b141",
-      "symbol": "NONE",
+      "symbol": "Catseye",
       "name": "Catseye",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of 9b565507858812e8b5ffbfbde9b200a3bc2e8f76",
       "decimals": 18,
@@ -383,7 +383,7 @@
       },
       "evmAddress": "0xe8b7423b80f9af33480d365171c7ceda3586aa35",
       "flowAddress": "0x1e4aa0b87d10b141",
-      "symbol": "NONE",
+      "symbol": "Purrzival",
       "name": "Purrzival",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of e8b7423b80f9af33480d365171c7ceda3586aa35",
       "decimals": 18,
@@ -399,7 +399,7 @@
   ],
   "totalAmount": 15,
   "filterType": "ALL",
-  "timestamp": "2025-04-22T03:14:26.318Z",
+  "timestamp": "2025-04-24T04:12:09.208Z",
   "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.svg",
   "keywords": [
     "Flow",
@@ -441,6 +441,6 @@
   "version": {
     "major": 1,
     "minor": 3,
-    "patch": 0
+    "patch": 1
   }
 }
