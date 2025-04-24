@@ -1,6 +1,6 @@
 [
   {
-    "address": "0x7296ebCa325e835EB6C1B690484CF6fB4c396d2C",
+    "address": "0x6A64E027E3F6A94AcBDCf39CF0cBb4BeaD5f5ecb",
     "registered": true,
     "bridged": true,
     "logos": {
@@ -10,9 +10,129 @@
     "mods": false,
     "cadence": {
       "address": "0x1e4aa0b87d10b141",
-      "contractName": "EVMVMBridgedToken_7296ebca325e835eb6c1b690484cf6fb4c396d2c"
+      "contractName": "EVMVMBridgedToken_6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb"
     },
-    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x7296ebCa325e835EB6C1B690484CF6fB4c396d2C/logo.png"
+    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x6A64E027E3F6A94AcBDCf39CF0cBb4BeaD5f5ecb/logo.png"
+  },
+  {
+    "address": "0xA0197b2044D28b08Be34d98b23c9312158Ea9A18",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": false,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0x1e4aa0b87d10b141",
+      "contractName": "EVMVMBridgedToken_a0197b2044d28b08be34d98b23c9312158ea9a18"
+    },
+    "onchainLogoUri": "https://assets.website-files.com/5f6294c0c7a8cdd643b1c820/5f6294c0c7a8cda55cb1c936_Flow_Wordmark.svg"
+  },
+  {
+    "address": "0xF1815bd50389c46847f0Bda824eC8da914045D14",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": false,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0x1e4aa0b87d10b141",
+      "contractName": "EVMVMBridgedToken_f1815bd50389c46847f0bda824ec8da914045d14"
+    },
+    "onchainLogoUri": "https://assets.coingecko.com/coins/images/6319/standard/usdc.png?1696506694"
+  },
+  {
+    "address": "0xf45CBE30bD953590C9917799142Edb05Be3F293F",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": true,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0x1e4aa0b87d10b141",
+      "contractName": "EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293f"
+    },
+    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xf45CBE30bD953590C9917799142Edb05Be3F293F/logo.png"
+  },
+  {
+    "address": "0x5598c0652B899EB40f169Dd5949BdBE0BF36ffDe",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": false,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0xd6f80565193ad727",
+      "contractName": "stFlowToken"
+    },
+    "onchainLogoUri": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.d6f80565193ad727.stFlowToken/logo.png"
+  },
+  {
+    "address": "0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": false,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0x1e4aa0b87d10b141",
+      "contractName": "EVMVMBridgedToken_2f6f07cdcf3588944bf4c42ac74ff24bf56e7590"
+    },
+    "onchainLogoUri": "https://assets.coingecko.com/coins/images/2518/standard/weth.png?1696503332"
+  },
+  {
+    "address": "0x674843C06FF83502ddb4D37c2E09C01cdA38cbc8",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": false,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0x1e4aa0b87d10b141",
+      "contractName": "EVMVMBridgedToken_674843c06ff83502ddb4d37c2e09c01cda38cbc8"
+    },
+    "onchainLogoUri": "https://assets.coingecko.com/coins/images/325/standard/Tether.png?1696501661"
+  },
+  {
+    "address": "0xd3bF53DAC106A0290B0483EcBC89d40FcC961f3e",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": true,
+      "svg": true
+    },
+    "mods": true,
+    "cadence": {
+      "address": "0x1654653399040a61",
+      "contractName": "FlowToken"
+    },
+    "onchainLogoUri": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.png"
+  },
+  {
+    "address": "0x2aaBea2058b5aC2D339b163C6Ab6f2b6d53aabED",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": true,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0x1e4aa0b87d10b141",
+      "contractName": "EVMVMBridgedToken_2aabea2058b5ac2d339b163c6ab6f2b6d53aabed"
+    },
+    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x2aaBea2058b5aC2D339b163C6Ab6f2b6d53aabED/logo.png"
   },
   {
     "address": "0x9b565507858812e8B5FfbFBDE9B200A3bc2e8F76",
@@ -30,7 +150,22 @@
     "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x9b565507858812e8B5FfbFBDE9B200A3bc2e8F76/logo.png"
   },
   {
-    "address": "0x5598c0652B899EB40f169Dd5949BdBE0BF36ffDe",
+    "address": "0x10448481630fb6d20B597e5B3d7e42DCb1247C8A",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": true,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0x1e4aa0b87d10b141",
+      "contractName": "EVMVMBridgedToken_10448481630fb6d20b597e5b3d7e42dcb1247c8a"
+    },
+    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x10448481630fb6d20B597e5B3d7e42DCb1247C8A/logo.png"
+  },
+  {
+    "address": "0x7f27352D5F83Db87a5A3E00f4B07Cc2138D8ee52",
     "registered": true,
     "bridged": true,
     "logos": {
@@ -39,10 +174,25 @@
     },
     "mods": false,
     "cadence": {
-      "address": "0xd6f80565193ad727",
-      "contractName": "stFlowToken"
+      "address": "0xf1ab99c82dee3526",
+      "contractName": "USDCFlow"
     },
-    "onchainLogoUri": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.d6f80565193ad727.stFlowToken/logo.png"
+    "onchainLogoUri": "https://raw.githubusercontent.com/FlowFans/flow-token-list/main/token-registry/A.f1ab99c82dee3526.USDCFlow/USDCf.png"
+  },
+  {
+    "address": "0x7296ebCa325e835EB6C1B690484CF6fB4c396d2C",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": true,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0x1e4aa0b87d10b141",
+      "contractName": "EVMVMBridgedToken_7296ebca325e835eb6c1b690484cf6fb4c396d2c"
+    },
+    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x7296ebCa325e835EB6C1B690484CF6fB4c396d2C/logo.png"
   },
   {
     "address": "0xE8b7423b80f9aF33480D365171c7ceDa3586aa35",
@@ -73,155 +223,5 @@
       "contractName": "EVMVMBridgedToken_1b97100ea1d7126c4d60027e231ea4cb25314bdb"
     },
     "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x1b97100eA1D7126C4d60027e231EA4CB25314bdb/logo.png"
-  },
-  {
-    "address": "0x7f27352D5F83Db87a5A3E00f4B07Cc2138D8ee52",
-    "registered": true,
-    "bridged": true,
-    "logos": {
-      "png": false,
-      "svg": false
-    },
-    "mods": false,
-    "cadence": {
-      "address": "0xf1ab99c82dee3526",
-      "contractName": "USDCFlow"
-    },
-    "onchainLogoUri": "https://raw.githubusercontent.com/FlowFans/flow-token-list/main/token-registry/A.f1ab99c82dee3526.USDCFlow/USDCf.png"
-  },
-  {
-    "address": "0x2aaBea2058b5aC2D339b163C6Ab6f2b6d53aabED",
-    "registered": true,
-    "bridged": true,
-    "logos": {
-      "png": true,
-      "svg": false
-    },
-    "mods": false,
-    "cadence": {
-      "address": "0x1e4aa0b87d10b141",
-      "contractName": "EVMVMBridgedToken_2aabea2058b5ac2d339b163c6ab6f2b6d53aabed"
-    },
-    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x2aaBea2058b5aC2D339b163C6Ab6f2b6d53aabED/logo.png"
-  },
-  {
-    "address": "0x6A64E027E3F6A94AcBDCf39CF0cBb4BeaD5f5ecb",
-    "registered": true,
-    "bridged": true,
-    "logos": {
-      "png": true,
-      "svg": false
-    },
-    "mods": false,
-    "cadence": {
-      "address": "0x1e4aa0b87d10b141",
-      "contractName": "EVMVMBridgedToken_6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb"
-    },
-    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x6A64E027E3F6A94AcBDCf39CF0cBb4BeaD5f5ecb/logo.png"
-  },
-  {
-    "address": "0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590",
-    "registered": true,
-    "bridged": true,
-    "logos": {
-      "png": false,
-      "svg": false
-    },
-    "mods": false,
-    "cadence": {
-      "address": "0x1e4aa0b87d10b141",
-      "contractName": "EVMVMBridgedToken_2f6f07cdcf3588944bf4c42ac74ff24bf56e7590"
-    },
-    "onchainLogoUri": "https://assets.coingecko.com/coins/images/2518/standard/weth.png?1696503332"
-  },
-  {
-    "address": "0xf45CBE30bD953590C9917799142Edb05Be3F293F",
-    "registered": true,
-    "bridged": true,
-    "logos": {
-      "png": true,
-      "svg": false
-    },
-    "mods": false,
-    "cadence": {
-      "address": "0x1e4aa0b87d10b141",
-      "contractName": "EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293f"
-    },
-    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xf45CBE30bD953590C9917799142Edb05Be3F293F/logo.png"
-  },
-  {
-    "address": "0x674843C06FF83502ddb4D37c2E09C01cdA38cbc8",
-    "registered": true,
-    "bridged": true,
-    "logos": {
-      "png": false,
-      "svg": false
-    },
-    "mods": false,
-    "cadence": {
-      "address": "0x1e4aa0b87d10b141",
-      "contractName": "EVMVMBridgedToken_674843c06ff83502ddb4d37c2e09c01cda38cbc8"
-    },
-    "onchainLogoUri": "https://assets.coingecko.com/coins/images/325/standard/Tether.png?1696501661"
-  },
-  {
-    "address": "0xF1815bd50389c46847f0Bda824eC8da914045D14",
-    "registered": true,
-    "bridged": true,
-    "logos": {
-      "png": false,
-      "svg": false
-    },
-    "mods": false,
-    "cadence": {
-      "address": "0x1e4aa0b87d10b141",
-      "contractName": "EVMVMBridgedToken_f1815bd50389c46847f0bda824ec8da914045d14"
-    },
-    "onchainLogoUri": "https://assets.coingecko.com/coins/images/6319/standard/usdc.png?1696506694"
-  },
-  {
-    "address": "0xA0197b2044D28b08Be34d98b23c9312158Ea9A18",
-    "registered": true,
-    "bridged": true,
-    "logos": {
-      "png": false,
-      "svg": false
-    },
-    "mods": false,
-    "cadence": {
-      "address": "0x1e4aa0b87d10b141",
-      "contractName": "EVMVMBridgedToken_a0197b2044d28b08be34d98b23c9312158ea9a18"
-    },
-    "onchainLogoUri": "https://assets.website-files.com/5f6294c0c7a8cdd643b1c820/5f6294c0c7a8cda55cb1c936_Flow_Wordmark.svg"
-  },
-  {
-    "address": "0x10448481630fb6d20B597e5B3d7e42DCb1247C8A",
-    "registered": true,
-    "bridged": true,
-    "logos": {
-      "png": true,
-      "svg": false
-    },
-    "mods": false,
-    "cadence": {
-      "address": "0x1e4aa0b87d10b141",
-      "contractName": "EVMVMBridgedToken_10448481630fb6d20b597e5b3d7e42dcb1247c8a"
-    },
-    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x10448481630fb6d20B597e5B3d7e42DCb1247C8A/logo.png"
-  },
-  {
-    "address": "0xd3bF53DAC106A0290B0483EcBC89d40FcC961f3e",
-    "registered": true,
-    "bridged": true,
-    "logos": {
-      "png": true,
-      "svg": true
-    },
-    "mods": true,
-    "cadence": {
-      "address": "0x1654653399040a61",
-      "contractName": "FlowToken"
-    },
-    "onchainLogoUri": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.png"
   }
 ]
