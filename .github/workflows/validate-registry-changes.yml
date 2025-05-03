@@ -123,6 +123,9 @@ jobs:
             exit 0
           fi
 
+          # Print the changed folders
+          echo "Changed folders: $CHANGED_FOLDERS"
+
           # Run validation script and capture output
           VALIDATION_OUTPUT=$(bun run tokens/src/validate-registry.ts $CHANGED_FOLDERS)
           VALIDATION_EXIT_CODE=$?

@@ -68,7 +68,7 @@ export async function validateRegistryChanges(
         // Check folder name format
         if (!isValidFolderName(folder)) {
             result.isValid = false;
-            result.errors.push("Invalid folder name format");
+            result.errors.push(`Invalid folder name format: ${folder}`);
             results.push(result);
             continue;
         }
@@ -76,7 +76,7 @@ export async function validateRegistryChanges(
         // Check folder contents
         if (!existsSync(folderPath)) {
             result.isValid = false;
-            result.errors.push("Folder does not exist");
+            result.errors.push(`Folder does not exist: ${folderPath}`);
             results.push(result);
             continue;
         }
@@ -93,7 +93,7 @@ export async function validateRegistryChanges(
         const address = folder.startsWith("testnet:") ? folder.split(":")[1] : folder;
         if (!address) {
             result.isValid = false;
-            result.errors.push("Invalid address format");
+            result.errors.push(`Invalid address format: ${folder}`);
             results.push(result);
             continue;
         }
@@ -101,7 +101,7 @@ export async function validateRegistryChanges(
         const { isValid, isBridged } = await validateEVMAsset(ctx, address);
         if (!isValid) {
             result.isValid = false;
-            result.errors.push("Invalid or non-existent EVM asset");
+            result.errors.push(`Invalid or non-existent EVM asset: ${folder}`);
         } else {
             result.isBridged = isBridged;
         }
