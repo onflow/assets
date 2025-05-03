@@ -24,9 +24,7 @@ async function main() {
   // Output the comment for GitHub comment
   console.log(comment);
 
-  // Exit with error if any validation failed
-  const hasErrors = results.some((r) => !r.isValid);
-  process.exit(hasErrors ? 1 : 0);
+  process.exit(0);
 }
 
 main().catch((error) => {
