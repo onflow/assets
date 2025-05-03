@@ -146,24 +146,33 @@ jobs:
           ORIGINAL_OUTPUT=$(bun run tokens/src/1-check-dirs-and-update-tokens-status.ts)
 
           # Get valid addresses from validated-folders.json
-          VALID_ADDRESSES=$(bun -e "
-            try {
-              const fs = require('fs');
-              const validatedFolders = JSON.parse(fs.readFileSync('validated-folders.json', 'utf8'));
-              const validResults = validatedFolders.filter(result => result.isValid);
-              const validAddresses = validResults.map(result => result.folder);
-              console.log(validAddresses.join('\\n'));
-            } catch (e) {
-              console.error('Error processing validated-folders.json:', e);
-              process.exit(1);
-            }
-          ")
+          if [ ! -f validated-folders.json ]; then
+            echo "validated-folders.json not found, skipping token status check."
+            VALID_ADDRESSES=""
+          else
+            VALID_ADDRESSES=$(bun -e "
+              try {
+                const fs = require('fs');
+                const validatedFolders = JSON.parse(fs.readFileSync('validated-folders.json', 'utf8'));
+                const validResults = validatedFolders.filter(result => result.isValid);
+                const validAddresses = validResults.map(result => result.folder);
+                console.log(validAddresses.join('\\n'));
+              } catch (e) {
+                console.error('Error processing validated-folders.json:', e);
+                process.exit(1);
+              }
+            ")
+          fi
 
           # Filter the original output to only include lines with valid addresses
-          FILTERED_OUTPUT=$(echo "$ORIGINAL_OUTPUT" | grep -E "$(echo "$VALID_ADDRESSES" | tr '\n' '|' | sed 's/|$//')" || true)
-
-          # Count the number of valid addresses found in the output
-          VALID_COUNT=$(echo "$FILTERED_OUTPUT" | grep -c "✅" || true)
+          if [ -z "$VALID_ADDRESSES" ]; then
+            FILTERED_OUTPUT="No Valid Addresses"
+            VALID_COUNT=0
+          else
+            FILTERED_OUTPUT=$(echo "$ORIGINAL_OUTPUT" | grep -E "$(echo "$VALID_ADDRESSES" | tr '\n' '|' | sed 's/|$//')" || true)
+            # Count the number of valid addresses found in the output
+            VALID_COUNT=$(echo "$FILTERED_OUTPUT" | grep -c "✅" || true)
+          fi
 
           # Generate final output
           CHECK_OUTPUT="## Token Status Check Report (${VALID_COUNT} valid) - ${NETWORK}\n\n${FILTERED_OUTPUT}"
