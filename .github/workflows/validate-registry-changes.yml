@@ -123,6 +123,12 @@ jobs:
             exit 0
           fi
 
+          # Print the changed folders
+          echo "Changed folders: $CHANGED_FOLDERS"
+
+          # Output changed folders for later steps
+          echo "changed_folders=$CHANGED_FOLDERS" >> $GITHUB_OUTPUT
+
           # Run validation script and capture output
           VALIDATION_OUTPUT=$(bun run tokens/src/validate-registry.ts $CHANGED_FOLDERS)
           VALIDATION_EXIT_CODE=$?
@@ -143,24 +149,33 @@ jobs:
           ORIGINAL_OUTPUT=$(bun run tokens/src/1-check-dirs-and-update-tokens-status.ts)
 
           # Get valid addresses from validated-folders.json
-          VALID_ADDRESSES=$(bun -e "
-            try {
-              const fs = require('fs');
-              const validatedFolders = JSON.parse(fs.readFileSync('validated-folders.json', 'utf8'));
-              const validResults = validatedFolders.filter(result => result.isValid);
-              const validAddresses = validResults.map(result => result.folder);
-              console.log(validAddresses.join('\\n'));
-            } catch (e) {
-              console.error('Error processing validated-folders.json:', e);
-              process.exit(1);
-            }
-          ")
+          if [ ! -f validated-folders.json ]; then
+            echo "validated-folders.json not found, skipping token status check."
+            VALID_ADDRESSES=""
+          else
+            VALID_ADDRESSES=$(bun -e "
+              try {
+                const fs = require('fs');
+                const validatedFolders = JSON.parse(fs.readFileSync('validated-folders.json', 'utf8'));
+                const validResults = validatedFolders.filter(result => result.isValid);
+                const validAddresses = validResults.map(result => result.folder);
+                console.log(validAddresses.join('\\n'));
+              } catch (e) {
+                console.error('Error processing validated-folders.json:', e);
+                process.exit(1);
+              }
+            ")
+          fi
 
           # Filter the original output to only include lines with valid addresses
-          FILTERED_OUTPUT=$(echo "$ORIGINAL_OUTPUT" | grep -E "$(echo "$VALID_ADDRESSES" | tr '\n' '|' | sed 's/|$//')" || true)
-
-          # Count the number of valid addresses found in the output
-          VALID_COUNT=$(echo "$FILTERED_OUTPUT" | grep -c "✅" || true)
+          if [ -z "$VALID_ADDRESSES" ]; then
+            FILTERED_OUTPUT="No Valid Addresses"
+            VALID_COUNT=0
+          else
+            FILTERED_OUTPUT=$(echo "$ORIGINAL_OUTPUT" | grep -E "$(echo "$VALID_ADDRESSES" | tr '\n' '|' | sed 's/|$//')" || true)
+            # Count the number of valid addresses found in the output
+            VALID_COUNT=$(echo "$FILTERED_OUTPUT" | grep -c "✅" || true)
+          fi
 
           # Generate final output
           CHECK_OUTPUT="## Token Status Check Report (${VALID_COUNT} valid) - ${NETWORK}\n\n${FILTERED_OUTPUT}"
@@ -168,6 +183,9 @@ jobs:
           echo "check_output<<EOF" >> $GITHUB_OUTPUT
           echo "$CHECK_OUTPUT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+
+          # Output VALID_COUNT for later steps
+          echo "valid_count=$VALID_COUNT" >> $GITHUB_OUTPUT
 
       - name: Create or update comment
         if: steps.validate.outputs.skip_comment != 'true'
@@ -178,3 +196,21 @@ jobs:
             const comment = `${{ steps.validate.outputs.comment }}\n\n${{ steps.check-tokens.outputs.check_output }}`
             const commentIdentifier = `## Registry Changes Validation Report - ${process.env.NETWORK}`
             await script({github, context, core, comment, commentIdentifier})
+
+      - name: Check valid count matches changed folders
+        if: steps.validate.outputs.skip_comment != 'true'
+        run: |
+          VALID_COUNT=${{ steps.check-tokens.outputs.valid_count }}
+          CHANGED_FOLDERS="${{ steps.validate.outputs.changed_folders }}"
+          # CHANGED_FOLDERS is a space-separated string, count the number of folders by splitting on spaces
+          if [ -z "$CHANGED_FOLDERS" ]; then
+            CHANGED_COUNT=0
+          else
+            # Count the number of space-separated items
+            CHANGED_COUNT=$(echo "$CHANGED_FOLDERS" | awk '{print NF}')
+          fi
+          echo "Valid count: $VALID_COUNT, Changed folders: $CHANGED_FOLDERS (count: $CHANGED_COUNT)"
+          if [ "$VALID_COUNT" -ne "$CHANGED_COUNT" ]; then
+            echo "Error: The number of valid tokens ($VALID_COUNT) does not match the number of changed folders ($CHANGED_COUNT)."
+            exit 1
+          fi
