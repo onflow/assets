@@ -72,7 +72,8 @@
       "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x7296ebCa325e835EB6C1B690484CF6fB4c396d2C/logo.png",
       "tags": [],
       "extensions": {
-        "website": "https://port.flow.com",
+        "coingeckoId": "bartholowmeow",
+        "website": "https://meowcoins.cryptokitties.co/",
         "displaySource": "0xa2de93114bae3e73"
       },
       "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_7296ebca325e835eb6c1b690484cf6fb4c396d2c.Vault",
@@ -181,7 +182,8 @@
       "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x6A64E027E3F6A94AcBDCf39CF0cBb4BeaD5f5ecb/logo.png",
       "tags": [],
       "extensions": {
-        "website": "https://port.flow.com",
+        "coingeckoId": "hotcocoa",
+        "website": "https://meowcoins.cryptokitties.co/",
         "displaySource": "0xa2de93114bae3e73"
       },
       "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb.Vault",
@@ -205,7 +207,8 @@
       "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xf45CBE30bD953590C9917799142Edb05Be3F293F/logo.png",
       "tags": [],
       "extensions": {
-        "website": "https://port.flow.com",
+        "coingeckoId": "gwendolion",
+        "website": "https://meowcoins.cryptokitties.co/",
         "displaySource": "0xa2de93114bae3e73"
       },
       "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293f.Vault",
@@ -287,7 +290,8 @@
       "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x10448481630fb6d20B597e5B3d7e42DCb1247C8A/logo.png",
       "tags": [],
       "extensions": {
-        "website": "https://port.flow.com",
+        "coingeckoId": "pawderick",
+        "website": "https://meowcoins.cryptokitties.co/",
         "displaySource": "0xa2de93114bae3e73"
       },
       "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_10448481630fb6d20b597e5b3d7e42dcb1247c8a.Vault",
@@ -366,7 +370,8 @@
       "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x9b565507858812e8B5FfbFBDE9B200A3bc2e8F76/logo.png",
       "tags": [],
       "extensions": {
-        "website": "https://port.flow.com",
+        "coingeckoId": "catseye",
+        "website": "https://meowcoins.cryptokitties.co/",
         "displaySource": "0xa2de93114bae3e73"
       },
       "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_9b565507858812e8b5ffbfbde9b200a3bc2e8f76.Vault",
@@ -390,7 +395,8 @@
       "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xE8b7423b80f9aF33480D365171c7ceDa3586aa35/logo.png",
       "tags": [],
       "extensions": {
-        "website": "https://port.flow.com",
+        "coingeckoId": "purrzival",
+        "website": "https://meowcoins.cryptokitties.co/",
         "displaySource": "0xa2de93114bae3e73"
       },
       "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_e8b7423b80f9af33480d365171c7ceda3586aa35.Vault",
@@ -399,7 +405,7 @@
   ],
   "totalAmount": 15,
   "filterType": "ALL",
-  "timestamp": "2025-04-24T04:12:09.208Z",
+  "timestamp": "2025-05-13T09:46:41.306Z",
   "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.svg",
   "keywords": [
     "Flow",
@@ -441,6 +447,6 @@
   "version": {
     "major": 1,
     "minor": 3,
-    "patch": 1
+    "patch": 2
   }
 }
