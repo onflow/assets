@@ -46,10 +46,13 @@
       "name": "Coinbase Wrapped BTC",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of a0197b2044d28b08be34d98b23c9312158ea9a18",
       "decimals": 8,
-      "logoURI": "https://assets.website-files.com/5f6294c0c7a8cdd643b1c820/5f6294c0c7a8cda55cb1c936_Flow_Wordmark.svg",
-      "tags": [],
+      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xA0197b2044D28b08Be34d98b23c9312158Ea9A18/logo.png",
+      "tags": [
+        "bridged-coin"
+      ],
       "extensions": {
-        "website": "https://port.flow.com"
+        "website": "https://port.flow.com",
+        "displaySource": "0xa2de93114bae3e73"
       },
       "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_a0197b2044d28b08be34d98b23c9312158ea9a18.Vault",
       "website": "https://evm.flowscan.io/token/0xa0197b2044d28b08be34d98b23c9312158ea9a18"
@@ -94,7 +97,7 @@
       "name": "Bridged USDC (Stargate)",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of f1815bd50389c46847f0bda824ec8da914045d14",
       "decimals": 6,
-      "logoURI": "https://assets.coingecko.com/coins/images/6319/standard/usdc.png?1696506694",
+      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xF1815bd50389c46847f0Bda824eC8da914045D14/logo.png",
       "tags": [
         "stablecoin",
         "bridged-coin"
@@ -122,7 +125,7 @@
       "name": "Flow",
       "description": "",
       "decimals": 18,
-      "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.png",
+      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xd3bF53DAC106A0290B0483EcBC89d40FcC961f3e/logo.png",
       "tags": [
         "utility-token"
       ],
@@ -312,7 +315,7 @@
       "name": "Bridged WETH (Stargate)",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of 2f6f07cdcf3588944bf4c42ac74ff24bf56e7590",
       "decimals": 18,
-      "logoURI": "https://assets.coingecko.com/coins/images/2518/standard/weth.png?1696503332",
+      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590/logo.png",
       "tags": [
         "bridged-coin"
       ],
@@ -339,7 +342,7 @@
       "name": "Bridged stgUSDT",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of 674843c06ff83502ddb4d37c2e09c01cda38cbc8",
       "decimals": 6,
-      "logoURI": "https://assets.coingecko.com/coins/images/325/standard/Tether.png?1696501661",
+      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x674843C06FF83502ddb4D37c2E09C01cdA38cbc8/logo.png",
       "tags": [
         "stablecoin",
         "bridged-coin"
@@ -405,7 +408,7 @@
   ],
   "totalAmount": 15,
   "filterType": "ALL",
-  "timestamp": "2025-05-13T09:46:41.306Z",
+  "timestamp": "2025-05-14T04:15:20.158Z",
   "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.svg",
   "keywords": [
     "Flow",
@@ -447,6 +450,6 @@
   "version": {
     "major": 1,
     "minor": 3,
-    "patch": 2
+    "patch": 3
   }
 }
