@@ -84,6 +84,30 @@
     },
     {
       "chainId": 747,
+      "address": "0x8bd75008361517df04aa3ea033f03ba33c0c0a66",
+      "contractName": "EVMVMBridgedToken_8bd75008361517df04aa3ea033f03ba33c0c0a66",
+      "path": {
+        "vault": "/storage/EVMVMBridgedToken_8bd75008361517df04aa3ea033f03ba33c0c0a66Vault",
+        "receiver": "/public/EVMVMBridgedToken_8bd75008361517df04aa3ea033f03ba33c0c0a66Receiver",
+        "balance": "/public/EVMVMBridgedToken_8bd75008361517df04aa3ea033f03ba33c0c0a66Vault"
+      },
+      "evmAddress": "0x8bd75008361517df04aa3ea033f03ba33c0c0a66",
+      "flowAddress": "0x1e4aa0b87d10b141",
+      "symbol": "GangGang",
+      "name": "GangGang",
+      "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of 8bd75008361517df04aa3ea033f03ba33c0c0a66",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x8bD75008361517Df04AA3ea033F03ba33C0C0A66/logo.png",
+      "tags": [],
+      "extensions": {
+        "website": "https://meowcoins.cryptokitties.co/",
+        "displaySource": "0xa2de93114bae3e73"
+      },
+      "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_8bd75008361517df04aa3ea033f03ba33c0c0a66.Vault",
+      "website": "https://evm.flowscan.io/token/0x8bd75008361517df04aa3ea033f03ba33c0c0a66"
+    },
+    {
+      "chainId": 747,
       "address": "0xf1815bd50389c46847f0bda824ec8da914045d14",
       "contractName": "EVMVMBridgedToken_f1815bd50389c46847f0bda824ec8da914045d14",
       "path": {
@@ -191,31 +215,6 @@
       },
       "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb.Vault",
       "website": "https://evm.flowscan.io/token/0x6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb"
-    },
-    {
-      "chainId": 747,
-      "address": "0xf45cbe30bd953590c9917799142edb05be3f293f",
-      "contractName": "EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293f",
-      "path": {
-        "vault": "/storage/EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293fVault",
-        "receiver": "/public/EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293fReceiver",
-        "balance": "/public/EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293fVault"
-      },
-      "evmAddress": "0xf45cbe30bd953590c9917799142edb05be3f293f",
-      "flowAddress": "0x1e4aa0b87d10b141",
-      "symbol": "Gwendolion",
-      "name": "Gwendolion",
-      "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of f45cbe30bd953590c9917799142edb05be3f293f",
-      "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xf45CBE30bD953590C9917799142Edb05Be3F293F/logo.png",
-      "tags": [],
-      "extensions": {
-        "coingeckoId": "gwendolion",
-        "website": "https://meowcoins.cryptokitties.co/",
-        "displaySource": "0xa2de93114bae3e73"
-      },
-      "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293f.Vault",
-      "website": "https://evm.flowscan.io/token/0xf45cbe30bd953590c9917799142edb05be3f293f"
     },
     {
       "chainId": 747,
@@ -404,11 +403,36 @@
       },
       "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_e8b7423b80f9af33480d365171c7ceda3586aa35.Vault",
       "website": "https://evm.flowscan.io/token/0xe8b7423b80f9af33480d365171c7ceda3586aa35"
+    },
+    {
+      "chainId": 747,
+      "address": "0xf45cbe30bd953590c9917799142edb05be3f293f",
+      "contractName": "EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293f",
+      "path": {
+        "vault": "/storage/EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293fVault",
+        "receiver": "/public/EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293fReceiver",
+        "balance": "/public/EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293fVault"
+      },
+      "evmAddress": "0xf45cbe30bd953590c9917799142edb05be3f293f",
+      "flowAddress": "0x1e4aa0b87d10b141",
+      "symbol": "Gwendolion",
+      "name": "Gwendolion",
+      "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of f45cbe30bd953590c9917799142edb05be3f293f",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xf45CBE30bD953590C9917799142Edb05Be3F293F/logo.png",
+      "tags": [],
+      "extensions": {
+        "coingeckoId": "gwendolion",
+        "website": "https://meowcoins.cryptokitties.co/",
+        "displaySource": "0xa2de93114bae3e73"
+      },
+      "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293f.Vault",
+      "website": "https://evm.flowscan.io/token/0xf45cbe30bd953590c9917799142edb05be3f293f"
     }
   ],
-  "totalAmount": 15,
+  "totalAmount": 16,
   "filterType": "ALL",
-  "timestamp": "2025-05-14T04:15:20.158Z",
+  "timestamp": "2025-05-14T16:48:27.176Z",
   "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.svg",
   "keywords": [
     "Flow",
@@ -449,7 +473,7 @@
   },
   "version": {
     "major": 1,
-    "minor": 3,
-    "patch": 3
+    "minor": 4,
+    "patch": 0
   }
 }
