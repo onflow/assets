@@ -5,14 +5,14 @@
   "tokens": [
     {
       "chainId": 747,
-      "address": "0x2aabea2058b5ac2d339b163c6ab6f2b6d53aabed",
+      "address": "0x2aaBea2058b5aC2D339b163C6Ab6f2b6d53aabED",
       "contractName": "EVMVMBridgedToken_2aabea2058b5ac2d339b163c6ab6f2b6d53aabed",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_2aabea2058b5ac2d339b163c6ab6f2b6d53aabedVault",
         "receiver": "/public/EVMVMBridgedToken_2aabea2058b5ac2d339b163c6ab6f2b6d53aabedReceiver",
         "balance": "/public/EVMVMBridgedToken_2aabea2058b5ac2d339b163c6ab6f2b6d53aabedVault"
       },
-      "evmAddress": "0x2aabea2058b5ac2d339b163c6ab6f2b6d53aabed",
+      "evmAddress": "0x2aaBea2058b5aC2D339b163C6Ab6f2b6d53aabED",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "USDF",
       "name": "USD Flow",
@@ -33,14 +33,14 @@
     },
     {
       "chainId": 747,
-      "address": "0xa0197b2044d28b08be34d98b23c9312158ea9a18",
+      "address": "0xA0197b2044D28b08Be34d98b23c9312158Ea9A18",
       "contractName": "EVMVMBridgedToken_a0197b2044d28b08be34d98b23c9312158ea9a18",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_a0197b2044d28b08be34d98b23c9312158ea9a18Vault",
         "receiver": "/public/EVMVMBridgedToken_a0197b2044d28b08be34d98b23c9312158ea9a18Receiver",
         "balance": "/public/EVMVMBridgedToken_a0197b2044d28b08be34d98b23c9312158ea9a18Vault"
       },
-      "evmAddress": "0xa0197b2044d28b08be34d98b23c9312158ea9a18",
+      "evmAddress": "0xA0197b2044D28b08Be34d98b23c9312158Ea9A18",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "cbBTC",
       "name": "Coinbase Wrapped BTC",
@@ -68,7 +68,7 @@
       },
       "evmAddress": "0x7296ebca325e835eb6c1b690484cf6fb4c396d2c",
       "flowAddress": "0x1e4aa0b87d10b141",
-      "symbol": "Bartholomeow",
+      "symbol": "Bart...",
       "name": "Bartholomeow",
       "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of 7296ebca325e835eb6c1b690484cf6fb4c396d2c",
       "decimals": 18,
@@ -84,14 +84,14 @@
     },
     {
       "chainId": 747,
-      "address": "0x8bd75008361517df04aa3ea033f03ba33c0c0a66",
+      "address": "0x8bD75008361517Df04AA3ea033F03ba33C0C0A66",
       "contractName": "EVMVMBridgedToken_8bd75008361517df04aa3ea033f03ba33c0c0a66",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_8bd75008361517df04aa3ea033f03ba33c0c0a66Vault",
         "receiver": "/public/EVMVMBridgedToken_8bd75008361517df04aa3ea033f03ba33c0c0a66Receiver",
         "balance": "/public/EVMVMBridgedToken_8bd75008361517df04aa3ea033f03ba33c0c0a66Vault"
       },
-      "evmAddress": "0x8bd75008361517df04aa3ea033f03ba33c0c0a66",
+      "evmAddress": "0x8bD75008361517Df04AA3ea033F03ba33C0C0A66",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "GangGang",
       "name": "GangGang",
@@ -108,14 +108,14 @@
     },
     {
       "chainId": 747,
-      "address": "0xf1815bd50389c46847f0bda824ec8da914045d14",
+      "address": "0xF1815bd50389c46847f0Bda824eC8da914045D14",
       "contractName": "EVMVMBridgedToken_f1815bd50389c46847f0bda824ec8da914045d14",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_f1815bd50389c46847f0bda824ec8da914045d14Vault",
         "receiver": "/public/EVMVMBridgedToken_f1815bd50389c46847f0bda824ec8da914045d14Receiver",
         "balance": "/public/EVMVMBridgedToken_f1815bd50389c46847f0bda824ec8da914045d14Vault"
       },
-      "evmAddress": "0xf1815bd50389c46847f0bda824ec8da914045d14",
+      "evmAddress": "0xF1815bd50389c46847f0Bda824eC8da914045D14",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "stgUSDC",
       "name": "Bridged USDC (Stargate)",
@@ -168,14 +168,14 @@
     },
     {
       "chainId": 747,
-      "address": "0x1b97100ea1d7126c4d60027e231ea4cb25314bdb",
+      "address": "0x1b97100eA1D7126C4d60027e231EA4CB25314bdb",
       "contractName": "EVMVMBridgedToken_1b97100ea1d7126c4d60027e231ea4cb25314bdb",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_1b97100ea1d7126c4d60027e231ea4cb25314bdbVault",
         "receiver": "/public/EVMVMBridgedToken_1b97100ea1d7126c4d60027e231ea4cb25314bdbReceiver",
         "balance": "/public/EVMVMBridgedToken_1b97100ea1d7126c4d60027e231ea4cb25314bdbVault"
       },
-      "evmAddress": "0x1b97100ea1d7126c4d60027e231ea4cb25314bdb",
+      "evmAddress": "0x1b97100eA1D7126C4d60027e231EA4CB25314bdb",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "ankrFLOWEVM",
       "name": "Ankr Staked FLOW EVM",
@@ -193,14 +193,14 @@
     },
     {
       "chainId": 747,
-      "address": "0x6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb",
+      "address": "0x6A64E027E3F6A94AcBDCf39CF0cBb4BeaD5f5ecb",
       "contractName": "EVMVMBridgedToken_6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecbVault",
         "receiver": "/public/EVMVMBridgedToken_6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecbReceiver",
         "balance": "/public/EVMVMBridgedToken_6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecbVault"
       },
-      "evmAddress": "0x6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb",
+      "evmAddress": "0x6A64E027E3F6A94AcBDCf39CF0cBb4BeaD5f5ecb",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "HotCocoa",
       "name": "HotCocoa",
@@ -218,14 +218,14 @@
     },
     {
       "chainId": 747,
-      "address": "0x5598c0652b899eb40f169dd5949bdbe0bf36ffde",
+      "address": "0x5598c0652B899EB40f169Dd5949BdBE0BF36ffDe",
       "contractName": "stFlowToken",
       "path": {
         "vault": "/storage/stFlowTokenVault",
         "receiver": "/public/stFlowTokenReceiver",
         "balance": "/public/stFlowTokenBalance"
       },
-      "evmAddress": "0x5598c0652b899eb40f169dd5949bdbe0bf36ffde",
+      "evmAddress": "0x5598c0652B899EB40f169Dd5949BdBE0BF36ffDe",
       "flowAddress": "0xd6f80565193ad727",
       "symbol": "stFLOW",
       "name": "Liquid Staked Flow",
@@ -247,14 +247,14 @@
     },
     {
       "chainId": 747,
-      "address": "0x7f27352d5f83db87a5a3e00f4b07cc2138d8ee52",
+      "address": "0x7f27352D5F83Db87a5A3E00f4B07Cc2138D8ee52",
       "contractName": "USDCFlow",
       "path": {
         "vault": "/storage/usdcFlowVault",
         "receiver": "/public/usdcFlowReceiver",
         "balance": "/public/usdcFlowMetadata"
       },
-      "evmAddress": "0x7f27352d5f83db87a5a3e00f4b07cc2138d8ee52",
+      "evmAddress": "0x7f27352D5F83Db87a5A3E00f4B07Cc2138D8ee52",
       "flowAddress": "0xf1ab99c82dee3526",
       "symbol": "USDC.e",
       "name": "Bridged USDC",
@@ -276,14 +276,14 @@
     },
     {
       "chainId": 747,
-      "address": "0x10448481630fb6d20b597e5b3d7e42dcb1247c8a",
+      "address": "0x10448481630fb6d20B597e5B3d7e42DCb1247C8A",
       "contractName": "EVMVMBridgedToken_10448481630fb6d20b597e5b3d7e42dcb1247c8a",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_10448481630fb6d20b597e5b3d7e42dcb1247c8aVault",
         "receiver": "/public/EVMVMBridgedToken_10448481630fb6d20b597e5b3d7e42dcb1247c8aReceiver",
         "balance": "/public/EVMVMBridgedToken_10448481630fb6d20b597e5b3d7e42dcb1247c8aVault"
       },
-      "evmAddress": "0x10448481630fb6d20b597e5b3d7e42dcb1247c8a",
+      "evmAddress": "0x10448481630fb6d20B597e5B3d7e42DCb1247C8A",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "Pawderick",
       "name": "Pawderick",
@@ -301,14 +301,14 @@
     },
     {
       "chainId": 747,
-      "address": "0x2f6f07cdcf3588944bf4c42ac74ff24bf56e7590",
+      "address": "0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590",
       "contractName": "EVMVMBridgedToken_2f6f07cdcf3588944bf4c42ac74ff24bf56e7590",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_2f6f07cdcf3588944bf4c42ac74ff24bf56e7590Vault",
         "receiver": "/public/EVMVMBridgedToken_2f6f07cdcf3588944bf4c42ac74ff24bf56e7590Receiver",
         "balance": "/public/EVMVMBridgedToken_2f6f07cdcf3588944bf4c42ac74ff24bf56e7590Vault"
       },
-      "evmAddress": "0x2f6f07cdcf3588944bf4c42ac74ff24bf56e7590",
+      "evmAddress": "0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "stgWETH",
       "name": "Bridged WETH (Stargate)",
@@ -328,14 +328,14 @@
     },
     {
       "chainId": 747,
-      "address": "0x674843c06ff83502ddb4d37c2e09c01cda38cbc8",
+      "address": "0x674843C06FF83502ddb4D37c2E09C01cdA38cbc8",
       "contractName": "EVMVMBridgedToken_674843c06ff83502ddb4d37c2e09c01cda38cbc8",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_674843c06ff83502ddb4d37c2e09c01cda38cbc8Vault",
         "receiver": "/public/EVMVMBridgedToken_674843c06ff83502ddb4d37c2e09c01cda38cbc8Receiver",
         "balance": "/public/EVMVMBridgedToken_674843c06ff83502ddb4d37c2e09c01cda38cbc8Vault"
       },
-      "evmAddress": "0x674843c06ff83502ddb4d37c2e09c01cda38cbc8",
+      "evmAddress": "0x674843C06FF83502ddb4D37c2E09C01cdA38cbc8",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "stgUSDT",
       "name": "Bridged stgUSDT",
@@ -356,14 +356,14 @@
     },
     {
       "chainId": 747,
-      "address": "0x9b565507858812e8b5ffbfbde9b200a3bc2e8f76",
+      "address": "0x9b565507858812e8B5FfbFBDE9B200A3bc2e8F76",
       "contractName": "EVMVMBridgedToken_9b565507858812e8b5ffbfbde9b200a3bc2e8f76",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_9b565507858812e8b5ffbfbde9b200a3bc2e8f76Vault",
         "receiver": "/public/EVMVMBridgedToken_9b565507858812e8b5ffbfbde9b200a3bc2e8f76Receiver",
         "balance": "/public/EVMVMBridgedToken_9b565507858812e8b5ffbfbde9b200a3bc2e8f76Vault"
       },
-      "evmAddress": "0x9b565507858812e8b5ffbfbde9b200a3bc2e8f76",
+      "evmAddress": "0x9b565507858812e8B5FfbFBDE9B200A3bc2e8F76",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "Catseye",
       "name": "Catseye",
@@ -381,14 +381,14 @@
     },
     {
       "chainId": 747,
-      "address": "0xe8b7423b80f9af33480d365171c7ceda3586aa35",
+      "address": "0xE8b7423b80f9aF33480D365171c7ceDa3586aa35",
       "contractName": "EVMVMBridgedToken_e8b7423b80f9af33480d365171c7ceda3586aa35",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_e8b7423b80f9af33480d365171c7ceda3586aa35Vault",
         "receiver": "/public/EVMVMBridgedToken_e8b7423b80f9af33480d365171c7ceda3586aa35Receiver",
         "balance": "/public/EVMVMBridgedToken_e8b7423b80f9af33480d365171c7ceda3586aa35Vault"
       },
-      "evmAddress": "0xe8b7423b80f9af33480d365171c7ceda3586aa35",
+      "evmAddress": "0xE8b7423b80f9aF33480D365171c7ceDa3586aa35",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "Purrzival",
       "name": "Purrzival",
@@ -406,14 +406,14 @@
     },
     {
       "chainId": 747,
-      "address": "0xf45cbe30bd953590c9917799142edb05be3f293f",
+      "address": "0xf45CBE30bD953590C9917799142Edb05Be3F293F",
       "contractName": "EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293f",
       "path": {
         "vault": "/storage/EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293fVault",
         "receiver": "/public/EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293fReceiver",
         "balance": "/public/EVMVMBridgedToken_f45cbe30bd953590c9917799142edb05be3f293fVault"
       },
-      "evmAddress": "0xf45cbe30bd953590c9917799142edb05be3f293f",
+      "evmAddress": "0xf45CBE30bD953590C9917799142Edb05Be3F293F",
       "flowAddress": "0x1e4aa0b87d10b141",
       "symbol": "Gwendolion",
       "name": "Gwendolion",
@@ -432,7 +432,7 @@
   ],
   "totalAmount": 16,
   "filterType": "ALL",
-  "timestamp": "2025-05-14T16:48:27.176Z",
+  "timestamp": "2025-05-15T00:35:44.755Z",
   "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.svg",
   "keywords": [
     "Flow",
@@ -474,6 +474,6 @@
   "version": {
     "major": 1,
     "minor": 4,
-    "patch": 0
+    "patch": 2
   }
 }

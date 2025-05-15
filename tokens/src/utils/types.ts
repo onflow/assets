@@ -90,6 +90,7 @@ export interface Token extends CustomizableTokenFields {
     logoURI: string;
     flowIdentifier: string;
     flowAddress: string;
+    evmAddress: string;
     contractName: string;
     [key: string]: unknown;
 }

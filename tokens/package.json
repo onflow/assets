@@ -9,6 +9,7 @@
   "dependencies": {
     "@onflow/fcl": "^1.15.0",
     "elliptic": "^6.6.1",
+    "ethers": "^6.14.0",
     "node-fetch": "^3.3.2",
     "sha3": "^2.1.4"
   },

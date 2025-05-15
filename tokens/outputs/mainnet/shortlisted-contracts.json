@@ -67,7 +67,7 @@
       "png": true,
       "svg": false
     },
-    "mods": false,
+    "mods": true,
     "cadence": {
       "address": "0x1e4aa0b87d10b141",
       "contractName": "EVMVMBridgedToken_7296ebca325e835eb6c1b690484cf6fb4c396d2c"

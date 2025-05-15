@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { getAddress } from "ethers";
 import fetch from "node-fetch";
 import {
     type Network,
@@ -179,6 +180,10 @@ async function main() {
                     return { ...token, ...mods };
                 }
             }
+
+            // Update the address to the checksum address
+            token.address = getAddress(token.address);
+            token.evmAddress = getAddress(token.evmAddress);
 
             return token;
         });
