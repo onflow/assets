@@ -27,7 +27,7 @@ Add the following files to the folder:
 
 - `logo.svg` - SVG format token logo, optimized and viewboxed
 - `logo.png` - PNG format token logo (256x256px recommended)
-- `mods.json` - Metadata modifications for the token, only when you need to modify the token metadata. the `mods.json` file is optional. Customizable fields are `"symbol", "name", "description"`, check [here](./src/utils/types.ts#L80).
+- `mods.json` - Metadata modifications for the token, only when you need to modify the token metadata. the `mods.json` file is optional. Customizable fields are `"symbol", "name", "description"`, [check here](./src/utils/types.ts#L81).
 
 Note:
 
