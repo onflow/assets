@@ -1,5 +1,9 @@
 {
   "symbol": "HITTEST44",
   "name": "HITTEST44",
-  "description": "A Hitdex test token."
+  "description": "A Hitdex test token.",
+  "bridgeStatus": "completed",
+  "bridgeTransactionHash": "0x686a8c161df8aff824cbba7acd6b86577fc856b724d95399d4497f726026badb",
+  "bridgeDate": "2025-08-13T12:29:02.610Z",
+  "verified": true
 }
