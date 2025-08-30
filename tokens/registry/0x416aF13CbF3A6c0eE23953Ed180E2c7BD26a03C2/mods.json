@@ -1,0 +1,10 @@
+{
+  "symbol": "HITTEST100",
+  "name": "HITTEST100",
+  "description": "A Hitdex testnet token.",
+  "network": {
+    "name": "flow-testnet",
+    "chainId": 545,
+    "isTestnet": true
+  }
+}
