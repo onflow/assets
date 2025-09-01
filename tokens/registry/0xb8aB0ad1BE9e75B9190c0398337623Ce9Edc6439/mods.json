@@ -1,0 +1,10 @@
+{
+  "symbol": "FW1",
+  "name": "FW1",
+  "description": "A Flow Wallet test token.",
+  "network": {
+    "name": "flow-testnet",
+    "chainId": 545,
+    "isTestnet": true
+  }
+}
