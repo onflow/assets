@@ -1,0 +1,10 @@
+{
+  "symbol": "FW3",
+  "name": "FW3",
+  "description": "A Flow Mobile Wallet Test Token.",
+  "network": {
+    "name": "flow-testnet",
+    "chainId": 545,
+    "isTestnet": true
+  }
+}
