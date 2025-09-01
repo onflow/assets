@@ -1,0 +1,10 @@
+{
+  "symbol": "FW2",
+  "name": "FW2",
+  "description": "A Flow Wallet mobile test.",
+  "network": {
+    "name": "flow-testnet",
+    "chainId": 545,
+    "isTestnet": true
+  }
+}
