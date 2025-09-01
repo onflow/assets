@@ -1,0 +1,10 @@
+{
+  "symbol": "MM1",
+  "name": "MM1",
+  "description": "A MetaMask Mobile Wallet test token.",
+  "network": {
+    "name": "flow-testnet",
+    "chainId": 545,
+    "isTestnet": true
+  }
+}
