@@ -1,0 +1,10 @@
+{
+  "symbol": "HITTEST160",
+  "name": "HITTEST160",
+  "description": "An embedded wallet test token",
+  "network": {
+    "name": "flow-testnet",
+    "chainId": 545,
+    "isTestnet": true
+  }
+}
