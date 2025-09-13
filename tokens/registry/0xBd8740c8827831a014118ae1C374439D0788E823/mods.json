@@ -1,0 +1,10 @@
+{
+  "symbol": "EMBEDDED21",
+  "name": "EMBEDDED21",
+  "description": "Embedded wallet test.",
+  "network": {
+    "name": "flow-testnet",
+    "chainId": 545,
+    "isTestnet": true
+  }
+}
