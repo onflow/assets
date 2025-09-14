@@ -1,0 +1,10 @@
+{
+  "symbol": "ANDROID1",
+  "name": "ANDROID1",
+  "description": "An android apk test token.",
+  "network": {
+    "name": "flow-testnet",
+    "chainId": 545,
+    "isTestnet": true
+  }
+}
