@@ -1,0 +1,10 @@
+{
+  "symbol": "METAMASK3",
+  "name": "METAMASK3",
+  "description": "A MetaMask test token.",
+  "network": {
+    "name": "flow-testnet",
+    "chainId": 545,
+    "isTestnet": true
+  }
+}
