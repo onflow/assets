@@ -1,0 +1,10 @@
+{
+  "symbol": "BTCDEX2",
+  "name": "BTC DEX2",
+  "description": "A BTC DEX test token.",
+  "network": {
+    "name": "flow-testnet",
+    "chainId": 545,
+    "isTestnet": true
+  }
+}
