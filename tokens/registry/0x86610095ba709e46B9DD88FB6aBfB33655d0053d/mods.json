@@ -1,0 +1,10 @@
+{
+  "symbol": "BTCDEX80",
+  "name": "BTCDEX80",
+  "description": "Test",
+  "network": {
+    "name": "flow-testnet",
+    "chainId": 545,
+    "isTestnet": true
+  }
+}
