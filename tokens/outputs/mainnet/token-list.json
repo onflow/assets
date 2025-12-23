@@ -219,35 +219,6 @@
     },
     {
       "chainId": 747,
-      "address": "0x5598c0652B899EB40f169Dd5949BdBE0BF36ffDe",
-      "contractName": "stFlowToken",
-      "path": {
-        "vault": "/storage/stFlowTokenVault",
-        "receiver": "/public/stFlowTokenReceiver",
-        "balance": "/public/stFlowTokenBalance"
-      },
-      "evmAddress": "0x5598c0652B899EB40f169Dd5949BdBE0BF36ffDe",
-      "flowAddress": "0xd6f80565193ad727",
-      "symbol": "stFLOW",
-      "name": "Liquid Staked Flow",
-      "description": "",
-      "decimals": 18,
-      "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.d6f80565193ad727.stFlowToken/logo.png",
-      "tags": [
-        "utility-token"
-      ],
-      "extensions": {
-        "discord": "https://discord.gg/r2keKxuKqX",
-        "twitter": "https://twitter.com/incrementfi",
-        "website": "https://app.increment.fi/staking",
-        "displaySource": "0xa2de93114bae3e73",
-        "pathSource": "0xa2de93114bae3e73"
-      },
-      "flowIdentifier": "A.d6f80565193ad727.stFlowToken.Vault",
-      "website": "https://evm.flowscan.io/token/0x5598c0652b899eb40f169dd5949bdbe0bf36ffde"
-    },
-    {
-      "chainId": 747,
       "address": "0x7f27352D5F83Db87a5A3E00f4B07Cc2138D8ee52",
       "contractName": "USDCFlow",
       "path": {
@@ -266,8 +237,8 @@
         "stablecoin"
       ],
       "extensions": {
-        "coingeckoId": "celer-bridged-usdc-flow-evm",
         "twitter": "https://x.com/flow_blockchain",
+        "coingeckoId": "celer-bridged-usdc-flow-evm",
         "website": "https://github.com/circlefin/stablecoin-evm/blob/master/doc/bridged_USDC_standard.md",
         "displaySource": "0xa2de93114bae3e73",
         "pathSource": "0xa2de93114bae3e73"
@@ -456,6 +427,35 @@
     },
     {
       "chainId": 747,
+      "address": "0x5598c0652B899EB40f169Dd5949BdBE0BF36ffDe",
+      "contractName": "stFlowToken",
+      "path": {
+        "vault": "/storage/stFlowTokenVault",
+        "receiver": "/public/stFlowTokenReceiver",
+        "balance": "/public/stFlowTokenBalance"
+      },
+      "evmAddress": "0x5598c0652B899EB40f169Dd5949BdBE0BF36ffDe",
+      "flowAddress": "0xd6f80565193ad727",
+      "symbol": "stFLOW",
+      "name": "Liquid Staked Flow",
+      "description": "",
+      "decimals": 18,
+      "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.d6f80565193ad727.stFlowToken/logo.png",
+      "tags": [
+        "utility-token"
+      ],
+      "extensions": {
+        "discord": "https://discord.gg/r2keKxuKqX",
+        "twitter": "https://twitter.com/incrementfi",
+        "website": "https://app.increment.fi/staking",
+        "displaySource": "0xa2de93114bae3e73",
+        "pathSource": "0xa2de93114bae3e73"
+      },
+      "flowIdentifier": "A.d6f80565193ad727.stFlowToken.Vault",
+      "website": "https://evm.flowscan.io/token/0x5598c0652b899eb40f169dd5949bdbe0bf36ffde"
+    },
+    {
+      "chainId": 747,
       "address": "0x717DAE2BaF7656BE9a9B01deE31d571a9d4c9579",
       "contractName": "EVMVMBridgedToken_717dae2baf7656be9a9b01dee31d571a9d4c9579",
       "path": {
@@ -481,7 +481,7 @@
   ],
   "totalAmount": 18,
   "filterType": "ALL",
-  "timestamp": "2025-12-19T22:02:57.960Z",
+  "timestamp": "2025-12-23T00:50:04.246Z",
   "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.svg",
   "keywords": [
     "Flow",
@@ -523,6 +523,6 @@
   "version": {
     "major": 1,
     "minor": 5,
-    "patch": 0
+    "patch": 1
   }
 }

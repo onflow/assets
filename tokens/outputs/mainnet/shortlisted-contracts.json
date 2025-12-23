@@ -109,7 +109,7 @@
     "registered": true,
     "bridged": true,
     "logos": {
-      "png": false,
+      "png": true,
       "svg": true
     },
     "mods": false,
@@ -117,7 +117,7 @@
       "address": "0x1e4aa0b87d10b141",
       "contractName": "EVMVMBridgedToken_99af3eea856556646c98c8b9b2548fe815240750"
     },
-    "onchainLogoUri": "https://assets.website-files.com/5f6294c0c7a8cdd643b1c820/5f6294c0c7a8cda55cb1c936_Flow_Wordmark.svg"
+    "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x99aF3EeA856556646C98c8B9b2548Fe815240750/logo.svg"
   },
   {
     "address": "0xE8b7423b80f9aF33480D365171c7ceDa3586aa35",
