@@ -59,6 +59,30 @@
     },
     {
       "chainId": 747,
+      "address": "0xd8Ad8AE8375aa31BFF541e17dC4b4917014EbDAa",
+      "contractName": "EVMVMBridgedToken_d8ad8ae8375aa31bff541e17dc4b4917014ebdaa",
+      "path": {
+        "vault": "/storage/EVMVMBridgedToken_d8ad8ae8375aa31bff541e17dc4b4917014ebdaaVault",
+        "receiver": "/public/EVMVMBridgedToken_d8ad8ae8375aa31bff541e17dc4b4917014ebdaaReceiver",
+        "balance": "/public/EVMVMBridgedToken_d8ad8ae8375aa31bff541e17dc4b4917014ebdaaVault"
+      },
+      "evmAddress": "0xd8Ad8AE8375aa31BFF541e17dC4b4917014EbDAa",
+      "flowAddress": "0x1e4aa0b87d10b141",
+      "symbol": "BETA",
+      "name": "BETA",
+      "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of d8ad8ae8375aa31bff541e17dc4b4917014ebdaa",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xd8Ad8AE8375aa31BFF541e17dC4b4917014EbDAa/logo.png",
+      "tags": [],
+      "extensions": {
+        "website": "https://topshotbeta.com/",
+        "displaySource": "0xa2de93114bae3e73"
+      },
+      "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_d8ad8ae8375aa31bff541e17dc4b4917014ebdaa.Vault",
+      "website": "https://evm.flowscan.io/token/0xd8ad8ae8375aa31bff541e17dc4b4917014ebdaa"
+    },
+    {
+      "chainId": 747,
       "address": "0x7296ebca325e835eb6c1b690484cf6fb4c396d2c",
       "contractName": "EVMVMBridgedToken_7296ebca325e835eb6c1b690484cf6fb4c396d2c",
       "path": {
@@ -216,6 +240,30 @@
       },
       "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb.Vault",
       "website": "https://evm.flowscan.io/token/0x6a64e027e3f6a94acbdcf39cf0cbb4bead5f5ecb"
+    },
+    {
+      "chainId": 747,
+      "address": "0x995258Cea49C25595CD94407FaD9E99B81406A84",
+      "contractName": "EVMVMBridgedToken_995258cea49c25595cd94407fad9e99b81406a84",
+      "path": {
+        "vault": "/storage/EVMVMBridgedToken_995258cea49c25595cd94407fad9e99b81406a84Vault",
+        "receiver": "/public/EVMVMBridgedToken_995258cea49c25595cd94407fad9e99b81406a84Receiver",
+        "balance": "/public/EVMVMBridgedToken_995258cea49c25595cd94407fad9e99b81406a84Vault"
+      },
+      "evmAddress": "0x995258Cea49C25595CD94407FaD9E99B81406A84",
+      "flowAddress": "0x1e4aa0b87d10b141",
+      "symbol": "AVO",
+      "name": "Avocado",
+      "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of 995258cea49c25595cd94407fad9e99b81406a84",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x995258Cea49C25595CD94407FaD9E99B81406A84/logo.png",
+      "tags": [],
+      "extensions": {
+        "website": "https://port.flow.com",
+        "displaySource": "0xa2de93114bae3e73"
+      },
+      "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_995258cea49c25595cd94407fad9e99b81406a84.Vault",
+      "website": "https://evm.flowscan.io/token/0x995258cea49c25595cd94407fad9e99b81406a84"
     },
     {
       "chainId": 747,
@@ -477,11 +525,35 @@
       },
       "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_717dae2baf7656be9a9b01dee31d571a9d4c9579.Vault",
       "website": "https://evm.flowscan.io/token/0x717dae2baf7656be9a9b01dee31d571a9d4c9579"
+    },
+    {
+      "chainId": 747,
+      "address": "0xD3378b419feae4e3A4Bb4f3349DBa43a1B511760",
+      "contractName": "EVMVMBridgedToken_d3378b419feae4e3a4bb4f3349dba43a1b511760",
+      "path": {
+        "vault": "/storage/EVMVMBridgedToken_d3378b419feae4e3a4bb4f3349dba43a1b511760Vault",
+        "receiver": "/public/EVMVMBridgedToken_d3378b419feae4e3a4bb4f3349dba43a1b511760Receiver",
+        "balance": "/public/EVMVMBridgedToken_d3378b419feae4e3a4bb4f3349dba43a1b511760Vault"
+      },
+      "evmAddress": "0xD3378b419feae4e3A4Bb4f3349DBa43a1B511760",
+      "flowAddress": "0x1e4aa0b87d10b141",
+      "symbol": "TRUMP",
+      "name": "OFFICIAL TRUMP",
+      "description": "This fungible token was bridged from EVM on Flow with the ERC20 contract address of d3378b419feae4e3a4bb4f3349dba43a1b511760",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xD3378b419feae4e3A4Bb4f3349DBa43a1B511760/logo.png",
+      "tags": [],
+      "extensions": {
+        "website": "https://port.flow.com",
+        "displaySource": "0xa2de93114bae3e73"
+      },
+      "flowIdentifier": "A.1e4aa0b87d10b141.EVMVMBridgedToken_d3378b419feae4e3a4bb4f3349dba43a1b511760.Vault",
+      "website": "https://evm.flowscan.io/token/0xd3378b419feae4e3a4bb4f3349dba43a1b511760"
     }
   ],
-  "totalAmount": 18,
+  "totalAmount": 21,
   "filterType": "ALL",
-  "timestamp": "2025-12-23T00:50:04.246Z",
+  "timestamp": "2026-02-10T16:01:09.495Z",
   "logoURI": "https://cdn.jsdelivr.net/gh/FlowFans/flow-token-list@main/token-registry/A.1654653399040a61.FlowToken/logo.svg",
   "keywords": [
     "Flow",
@@ -522,7 +594,7 @@
   },
   "version": {
     "major": 1,
-    "minor": 5,
-    "patch": 1
+    "minor": 6,
+    "patch": 0
   }
 }

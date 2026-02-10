@@ -15,6 +15,21 @@
     "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0xf45CBE30bD953590C9917799142Edb05Be3F293F/logo.png"
   },
   {
+    "address": "0x995258Cea49C25595CD94407FaD9E99B81406A84",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": true,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0x1e4aa0b87d10b141",
+      "contractName": "EVMVMBridgedToken_995258cea49c25595cd94407fad9e99b81406a84"
+    },
+    "onchainLogoUri": "https://fcljjsnuzjacwqgiqiib.supabase.co/storage/v1/object/public/token_images/images/f7c8d943-74ff-4cd4-acee-3e5dfcad9636.jpeg"
+  },
+  {
     "address": "0x8bD75008361517Df04AA3ea033F03ba33C0C0A66",
     "registered": true,
     "bridged": true,
@@ -60,6 +75,21 @@
     "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x6A64E027E3F6A94AcBDCf39CF0cBb4BeaD5f5ecb/logo.png"
   },
   {
+    "address": "0xd8Ad8AE8375aa31BFF541e17dC4b4917014EbDAa",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": true,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0x1e4aa0b87d10b141",
+      "contractName": "EVMVMBridgedToken_d8ad8ae8375aa31bff541e17dc4b4917014ebdaa"
+    },
+    "onchainLogoUri": "https://i.imgur.com/9MWLZ47.png"
+  },
+  {
     "address": "0xA0197b2044D28b08Be34d98b23c9312158Ea9A18",
     "registered": true,
     "bridged": true,
@@ -103,6 +133,21 @@
       "contractName": "EVMVMBridgedToken_7296ebca325e835eb6c1b690484cf6fb4c396d2c"
     },
     "onchainLogoUri": "https://raw.githubusercontent.com/onflow/assets/main/tokens/registry/0x7296ebCa325e835EB6C1B690484CF6fB4c396d2C/logo.png"
+  },
+  {
+    "address": "0xD3378b419feae4e3A4Bb4f3349DBa43a1B511760",
+    "registered": true,
+    "bridged": true,
+    "logos": {
+      "png": true,
+      "svg": false
+    },
+    "mods": false,
+    "cadence": {
+      "address": "0x1e4aa0b87d10b141",
+      "contractName": "EVMVMBridgedToken_d3378b419feae4e3a4bb4f3349dba43a1b511760"
+    },
+    "onchainLogoUri": "https://dd.dexscreener.com/ds-data/tokens/flowevm/0xd3378b419feae4e3a4bb4f3349dba43a1b511760.png?size=xl&key=2f7d83"
   },
   {
     "address": "0x99aF3EeA856556646C98c8B9b2548Fe815240750",
